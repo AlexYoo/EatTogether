@@ -1,0 +1,41 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.tacademy.eattogether.signUpFragment.SNSLoginFragment">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/blue_btn_bg_pressed_color">
+
+        <Button
+            android:id="@+id/facebookLoginButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="facebookLogin"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:id="@+id/kakaoLoginButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="kakaoLoginButton"
+            android:layout_below="@+id/facebookLoginButton"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:id="@+id/naverLoginButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="naverLoginButton"
+            android:layout_below="@+id/kakaoLoginButton"
+            android:layout_alignRight="@+id/kakaoLoginButton"
+            android:layout_alignEnd="@+id/kakaoLoginButton"
+            android:layout_marginTop="12dp" />
+
+    </RelativeLayout>
+</FrameLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_eatTogether"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_eatTogether" />
+
+    <item
+        android:id="@+id/navigation_goodRestaurant"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/title_goodRestaurant" />
+
+    <item
+        android:id="@+id/navigation_history"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="@string/title_history" />
+
+    <item
+        android:id="@+id/navigation_chatting"
+        android:icon="@android:drawable/btn_star_big_on"
+        android:title="@string/title_chatting" />
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@android:drawable/btn_star_big_on"
+        android:title="@string/title_settings" />
+
+</menu>

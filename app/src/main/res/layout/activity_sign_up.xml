@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.tacademy.eattogether.Ui.SIgnUpActivity"
+    android:weightSum="100"
+    android:orientation="vertical">
+
+   <android.support.v4.view.ViewPager
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:layout_weight="60"
+       android:id="@+id/tutorialViewPager"
+       ></android.support.v4.view.ViewPager>
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="40"
+        android:id="@+id/snsLoginFragment"
+        android:name="com.example.tacademy.eattogether.signUpFragment.SNSLoginFragment"
+        ></fragment>
+
+
+
+</LinearLayout>
