@@ -27,23 +27,23 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.navigation_eatTogether:
+                case R.id.navigation_eatTogether: //메인 홈 화면
 //                    mTextMessage.setText(R.string.title_eatTogether);
                     switchToHomeFragment();
                     return true;
                 case R.id.navigation_goodRestaurant:
-//                    mTextMessage.setText(R.string.title_goodRestaurant);
+//                    mTextMessage.setText(R.string.title_goodRestaurant); //메인 맛집 화면
                     switchToGoodRestFragment();
                     return true;
-                case R.id.navigation_history:
+                case R.id.navigation_history: //메인 히스토리 화면
 //                    mTextMessage.setText(R.string.title_history);
                     switchToHistoryFragment();
                     return true;
-                case R.id.navigation_chatting:
+                case R.id.navigation_chatting: //메인 채팅방 화면
 //                    mTextMessage.setText(R.string.title_chatting);
                     switchToChattingFragment();
                     return true;
-                case R.id.navigation_settings:
+                case R.id.navigation_settings: //메인 설정 화면
 //                    mTextMessage.setText(R.string.title_settings);
                     switchToSettingsFragment();
                     return true;
@@ -58,9 +58,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mTextMessage = (TextView) findViewById(R.id.message);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        mTextMessage = (TextView) findViewById(R.id.message); //테스트용 텍스트 설정
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation); //네비게이션 아이템 끌어오기
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener); //네비게이션 아이템 리스너 설정
+        getSupportActionBar().hide(); //액션바 숨기기
     }
 
     public void switchToHomeFragment(){

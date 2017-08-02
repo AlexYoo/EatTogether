@@ -19,22 +19,22 @@
         tools:replace="android:icon">
         <activity
             android:name=".Ui.MainActivity"
-            android:label="@string/title_activity_main"></activity>
+            android:label="@string/title_activity_main" />
         <activity android:name=".Ui.SIgnUpActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".Ui.ProfileActivity"
             android:label="@string/title_activity_profile"
-            android:theme="@style/AppTheme.NoActionBar">
-
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Ui.RegionActivity" />
+        <activity android:name=".Ui.ScheduleActivity" />
+        <activity android:name=".Ui.FoodTypeActivity" />
+        <activity android:name=".Ui.SelectNumberActivity"></activity>
     </application>
 
 </manifest>
