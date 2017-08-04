@@ -10,7 +10,7 @@
     android:orientation="vertical"
     android:weightSum="1">
 
-    <ImageButton
+    <de.hdodenhof.circleimageview.CircleImageView
         android:layout_marginTop="30dp"
         android:id="@+id/profileImage"
         android:layout_width="128dp"

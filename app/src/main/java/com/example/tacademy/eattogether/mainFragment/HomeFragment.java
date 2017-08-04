@@ -5,11 +5,17 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.example.tacademy.eattogether.Model.HomeRecycler;
 import com.example.tacademy.eattogether.R;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -17,9 +23,16 @@ import com.example.tacademy.eattogether.R;
 public class HomeFragment extends Fragment {
 
 
+    RecyclerView recyclerView;
+    LinearLayoutManager linearLayoutManager;
+    ListAdapter listAdapter;
+    ArrayList<HomeRecycler> data = new ArrayList<>();
+
     public HomeFragment() {
         // Required empty public constructor
     }
+
+
 
     @Override
     public void onAttach(Context context) {
@@ -29,12 +42,72 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        recyclerView = view.findViewById(R.id.recyclerView);
+        linearLayoutManager = new LinearLayoutManager(getContext());
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        listAdapter = new ListAdapter(data);
+        recyclerView.setAdapter(listAdapter);
+        for(int i=0; i<4;i++) {
+            data.add(new HomeRecycler());
+        }
+        return view;
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+    public void onActivityCreated(@Nullable Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
+    }
+
+
+    //뷰 홀더
+    public class ListItemViewHolder extends RecyclerView.ViewHolder{
+
+        TextView viewName,viewFoodType,viewPeopleCnt,viewNotice;
+
+        public ListItemViewHolder(View itemView) {
+            super(itemView);
+
+            viewName = itemView.findViewById(R.id.viewName);
+            viewFoodType = itemView.findViewById(R.id.viewFoodType);
+            viewPeopleCnt = itemView.findViewById(R.id.viewPeopleCnt);
+            viewNotice = itemView.findViewById(R.id.viewNotice);
+        }
+    }
+
+    //어댑터터
+
+    public class ListAdapter extends RecyclerView.Adapter{
+
+        ArrayList<HomeRecycler> data;
+
+        public ListAdapter() {
+        }
+
+        public ListAdapter(ArrayList<HomeRecycler> data) {
+            this.data = data;
+        }
+
+        @Override
+        public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            View item = LayoutInflater.from(parent.getContext()).inflate(R.layout.cell_main_home_list, parent, false);
+            return new ListItemViewHolder(item);
+        }
+
+        @Override
+        public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+            HomeRecycler homeRecycler = data.get(position);
+            ListItemViewHolder item = (ListItemViewHolder) holder;
+            item.viewName.setText(homeRecycler.getViewName());
+            item.viewFoodType.setText(homeRecycler.getViewFoodType());
+            item.viewPeopleCnt.setText("" + homeRecycler.getViewPeopleCnt());
+            item.viewNotice.setText(homeRecycler.getViewNotice());
+        }
+
+        @Override
+        public int getItemCount() {
+            return data.size();
+        }
     }
 }
