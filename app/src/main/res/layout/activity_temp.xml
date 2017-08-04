@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="50dp"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:context="com.example.tacademy.eattogether.Ui.tempActivity">
+
+    <Button
+        android:id="@+id/selectRegion"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="left|fill_vertical"
+        android:text="여행 지역" />
+
+    <Button
+        android:id="@+id/selectDate"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="left|fill_vertical"
+        android:text="여행 일정"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="76dp" />
+
+    <Button
+        android:id="@+id/selectFood"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="left|fill_vertical"
+        android:text="음식 종류" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/peopleLayout">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:gravity="center|left"
+            android:text="인원 선택"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/minusButton"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:text="-"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/NumOfPeople"
+            android:text="2"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/plusButton"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="+" />
+
+
+    </LinearLayout>
+
+
+    <EditText
+        android:id="@+id/Comment"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="0.53"
+        android:hint="하고 싶은 말"
+        android:inputType="textMultiLine" />
+
+
+</LinearLayout>

@@ -1,25 +1,28 @@
 package com.example.tacademy.eattogether.Ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
+import com.example.tacademy.eattogether.R;
 import com.example.tacademy.eattogether.mainFragment.ChattingFragment;
 import com.example.tacademy.eattogether.mainFragment.GoodRestFragment;
 import com.example.tacademy.eattogether.mainFragment.HistoryFragment;
 import com.example.tacademy.eattogether.mainFragment.HomeFragment;
 import com.example.tacademy.eattogether.mainFragment.SettingsFragment;
-import com.example.tacademy.eattogether.R;
 
 public class MainActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
     FragmentManager fragmentManager = getSupportFragmentManager();
-
+    FloatingActionButton tempFloatingButton; //임시 테스트용 버튼 -> 나중에 topdrawer로 구현하기
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -61,30 +64,36 @@ public class MainActivity extends AppCompatActivity {
         mTextMessage = (TextView) findViewById(R.id.message); //테스트용 텍스트 설정
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation); //네비게이션 아이템 끌어오기
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener); //네비게이션 아이템 리스너 설정
-        getSupportActionBar().hide(); //액션바 숨기기
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, tempActivity.class));
+            }
+        });
     }
 
-    public void switchToHomeFragment(){
+    public void switchToHomeFragment(){ //홈 화면으로 이동
         
         fragmentManager.beginTransaction().replace(R.id.content, new HomeFragment()).commit();
     }
 
-    public void switchToGoodRestFragment(){
+    public void switchToGoodRestFragment(){ //맛집 화면으로 이동
         
         fragmentManager.beginTransaction().replace(R.id.content, new GoodRestFragment()).commit();
     }
 
-    public void switchToHistoryFragment(){
+    public void switchToHistoryFragment(){ //히스토리 화면으로 이동
         
         fragmentManager.beginTransaction().replace(R.id.content, new HistoryFragment()).commit();
     }
 
-    public void switchToSettingsFragment(){
+    public void switchToSettingsFragment(){ //설정 화면으로 이동
         
         fragmentManager.beginTransaction().replace(R.id.content, new SettingsFragment()).commit();
     }
 
-    public void switchToChattingFragment(){
+    public void switchToChattingFragment(){ //채팅 화면으로 이동
         
         fragmentManager.beginTransaction().replace(R.id.content, new ChattingFragment()).commit();
     }

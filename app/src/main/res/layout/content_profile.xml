@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,89 +7,92 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.tacademy.eattogether.Ui.ProfileActivity"
     tools:showIn="@layout/activity_profile"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="1">
 
     <ImageButton
+        android:layout_marginTop="30dp"
         android:id="@+id/profileImage"
         android:layout_width="128dp"
         android:layout_height="117dp"
-        tools:layout_editor_absoluteX="128dp"
-        tools:layout_editor_absoluteY="54dp"
-        android:layout_marginTop="15dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_gravity="center"/>
 
     <EditText
         android:id="@+id/profileName"
         android:layout_width="324dp"
         android:layout_height="46dp"
-        android:layout_marginTop="38dp"
+        android:layout_gravity="center"
         android:ems="10"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="212dp"
-        android:layout_below="@+id/profileImage"
-        android:layout_alignRight="@+id/profileSex"
-        android:layout_alignEnd="@+id/profileSex" />
+        android:inputType="textPersonName" />
 
-    <TextView
-        android:id="@+id/profileSex"
-        android:layout_width="326dp"
+    <LinearLayout
+        android:layout_marginLeft="30dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="TextView"
+        android:orientation="horizontal"
+        android:weightSum="1">
 
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="278dp"
-        android:layout_marginTop="17dp"
-        android:layout_below="@+id/profileName"
-        android:layout_centerHorizontal="true" />
+        <TextView
+            android:id="@+id/profileSex"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="0.3"
+            android:gravity="left|center_vertical"
+            android:text="성별"
+            android:textSize="30dp" />
 
+        <RadioGroup
+            android:layout_weight="0.7"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            >
+
+            <RadioButton
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="20dp"
+                android:layout_gravity="center"
+                android:id="@+id/radioButtonMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="남자" />
+
+            <RadioButton
+                android:layout_gravity="center"
+                android:id="@+id/radioButtonFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="여자" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+
+    <!--생년월일 스크롤로 구현하기-->
     <Button
+        android:layout_gravity="center"
+        android:gravity="center|left"
         android:id="@+id/profileBirthday"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Button"
-        android:layout_below="@+id/profileSex"
-        android:layout_marginTop="16dp"
-        android:layout_alignRight="@+id/profileSex"
-        android:layout_alignEnd="@+id/profileSex"
-        android:layout_alignLeft="@+id/profileSex"
-        android:layout_alignStart="@+id/profileSex" />
+        android:text="생년월일"
+        android:textSize="30dp"
+        android:layout_below="@+id/profileSex" />
 
     <EditText
         android:id="@+id/profileIntroduction"
-        android:layout_width="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="0.31"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:layout_below="@+id/profileBirthday"
-        android:layout_alignLeft="@+id/profileBirthday"
-        android:layout_alignStart="@+id/profileBirthday"
-        android:layout_alignRight="@+id/profileBirthday"
-        android:layout_alignEnd="@+id/profileBirthday" />
+        android:gravity="top|left"
+        android:hint="자기소개"
+        android:inputType="textMultiLine"
+        android:textSize="30dp" />
 
-    <RadioButton
-        android:id="@+id/radioButtonMale"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="남자"
-        android:layout_alignBaseline="@+id/radioButtonFemale"
-        android:layout_alignBottom="@+id/radioButtonFemale"
-        android:layout_alignRight="@+id/profileImage"
-        android:layout_alignEnd="@+id/profileImage" />
 
-    <RadioButton
-        android:id="@+id/radioButtonFemale"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="19dp"
-        android:layout_marginStart="19dp"
-        android:text="여자"
-        android:layout_alignBottom="@+id/profileSex"
-        android:layout_toRightOf="@+id/radioButtonMale"
-        android:layout_toEndOf="@+id/radioButtonMale"
-        android:layout_alignTop="@+id/profileSex" />
-
-</RelativeLayout>
+</LinearLayout>

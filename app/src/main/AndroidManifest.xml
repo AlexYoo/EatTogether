@@ -20,21 +20,33 @@
         <activity
             android:name=".Ui.MainActivity"
             android:label="@string/title_activity_main" />
-        <activity android:name=".Ui.SIgnUpActivity">
+
+        <!-- 맨 처음 회원가입 화면 -->
+        <activity android:name=".Ui.SignUpActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".Ui.ProfileActivity"
             android:label="@string/title_activity_profile"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Ui.RegionActivity" />
-        <activity android:name=".Ui.ScheduleActivity" />
+        <activity android:name=".Ui.ScheduleActivity"></activity>
         <activity android:name=".Ui.FoodTypeActivity" />
-        <activity android:name=".Ui.SelectNumberActivity"></activity>
+
+        <!-- top drawer로 바꿀 임시 액티비티 -->
+        <activity android:name=".Ui.tempActivity">
+
+        </activity>
+
+        <activity
+            android:name=".testActivity"
+            android:label="@string/title_activity_test"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

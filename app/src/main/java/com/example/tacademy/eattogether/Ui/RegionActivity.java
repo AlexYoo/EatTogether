@@ -10,6 +10,6 @@ public class RegionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_select_region);
+        setContentView(R.layout.activity_region);
     }
 }
