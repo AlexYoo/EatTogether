@@ -16,14 +16,13 @@
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="600dp"
         android:layout_width="match_parent"
-        android:layout_height="35dp"
+        android:layout_height="50dp"
         android:background="@android:color/holo_green_dark"
         android:gravity="left|center"
         android:text="여기는 히스토리"
         android:textSize="35dp"/>
-
 
 
 </FrameLayout>

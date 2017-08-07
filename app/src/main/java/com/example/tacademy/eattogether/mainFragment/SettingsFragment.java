@@ -10,6 +10,8 @@ import com.example.tacademy.eattogether.R;
 
 public class SettingsFragment extends Fragment {
 
+
+
     public SettingsFragment() {
     }
 

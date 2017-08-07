@@ -10,15 +10,15 @@
         android:layout_height="match_parent"
         android:id="@+id/chattingRecyclerView"
         android:padding="4dp"
-        tools:listitem="@layout/cell_main_home_list">
+        tools:listitem="@layout/cell_main_chatting_list">
 
     </android.support.v7.widget.RecyclerView>
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="600dp"
         android:layout_width="match_parent"
-        android:layout_height="35dp"
+        android:layout_height="50dp"
         android:background="@android:color/holo_green_dark"
         android:gravity="left|center"
         android:text="여기는 채팅"

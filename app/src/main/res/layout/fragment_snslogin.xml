@@ -2,32 +2,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blue_btn_bg_pressed_color"
     tools:context="com.example.tacademy.eattogether.signUpFragment.SNSLoginFragment">
 
 
     <RelativeLayout
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/blue_btn_bg_pressed_color">
+        android:layout_height="match_parent">
 
-        <Button
+        <ImageButton
             android:id="@+id/facebookLoginButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="facebookLogin"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
+            android:src="@drawable/facebook_login_button"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/kakaoLoginButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="kakaoLoginButton"
             android:layout_below="@+id/facebookLoginButton"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/kakao_login_button"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/naverLoginButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -35,7 +37,8 @@
             android:layout_below="@+id/kakaoLoginButton"
             android:layout_alignRight="@+id/kakaoLoginButton"
             android:layout_alignEnd="@+id/kakaoLoginButton"
-            android:layout_marginTop="12dp" />
+            android:layout_marginTop="12dp"
+            android:src="@drawable/naver_login_button"/>
 
     </RelativeLayout>
 </FrameLayout>

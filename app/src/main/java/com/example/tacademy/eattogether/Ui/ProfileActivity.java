@@ -74,6 +74,7 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 S.getInstance().showPopup(ProfileActivity.this, "생년월일", "여기서 달력을 띄웁니다.", 2);
+                startActivity(new Intent(getBaseContext(), DatePickerActivity.class));
             }
         });
 

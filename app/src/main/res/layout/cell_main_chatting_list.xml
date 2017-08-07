@@ -24,29 +24,25 @@
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:id="@+id/chattingName"
-            android:gravity="left|fill_vertical"
-            android:text="이름 : " />
+            android:gravity="left|fill_vertical"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:id="@+id/chattingFoodType"
-            android:gravity="left|fill_vertical"
-            android:text="음식종류 : "/>
+            android:gravity="left|fill_vertical"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:id="@+id/chattingPeopleCnt"
-            android:gravity="left|fill_vertical"
-            android:text="인원 : "/>
+            android:gravity="left|fill_vertical"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="25dp"
             android:id="@+id/chattingComment"
-            android:gravity="left|fill_vertical"
-            android:text="하고 싶은 말 : "/>
+            android:gravity="left|fill_vertical"/>
 
     </LinearLayout>
 

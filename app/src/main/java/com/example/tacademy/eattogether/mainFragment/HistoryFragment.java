@@ -94,10 +94,10 @@ public class HistoryFragment extends Fragment {
         public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
             HistoryModel historyModel = data.get(position);
             ListItemViewHolder item = (ListItemViewHolder) holder;
-            item.name.setText(historyModel.getName());
-            item.foodType.setText(historyModel.getFoodType());
-            item.peopleCnt.setText(""+historyModel.getPeopleCnt());
-            item.comment.setText(historyModel.getComment());
+            item.name.setText("이름 : " + historyModel.getName());
+            item.foodType.setText("음식 종류 : " + historyModel.getFoodType());
+            item.peopleCnt.setText("인원 : "+historyModel.getPeopleCnt());
+            item.comment.setText("하고 싶은 말 : " + historyModel.getComment());
         }
 
         @Override

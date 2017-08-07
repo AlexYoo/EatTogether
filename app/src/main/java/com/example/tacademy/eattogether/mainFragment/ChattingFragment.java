@@ -99,10 +99,10 @@ public class ChattingFragment extends Fragment {
         public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
             ChattingModel chattingModel = data.get(position);
             ListItemViewHolder item = (ListItemViewHolder) holder;
-            item.ownerName.setText(chattingModel.getOwnerName());
-            item.foodType.setText(chattingModel.getFoodType());
-            item.peopleCnt.setText(""+chattingModel.getPeopleCnt());
-            item.comment.setText(chattingModel.getComment());
+            item.ownerName.setText("이름 : " + chattingModel.getOwnerName());
+            item.foodType.setText("음식 종류 : " + chattingModel.getFoodType());
+            item.peopleCnt.setText("인원"+chattingModel.getPeopleCnt()); //총인원, 참여인원 나누기
+            item.comment.setText("하고 싶은 말 : " + chattingModel.getComment());
         }
 
         @Override

@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         fab2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, tempActivity.class));
+                startActivity(new Intent(MainActivity.this, temp2Activity.class));
             }
         });
     }

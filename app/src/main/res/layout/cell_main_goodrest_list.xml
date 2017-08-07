@@ -9,7 +9,7 @@
     <ImageView
         android:background="@color/black_overlay"
         android:padding="1dp"
-        android:id="@+id/historyThumbnail"
+        android:id="@+id/restThumbnail"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_weight="33" />
@@ -19,29 +19,42 @@
         android:layout_height="100dp"
         android:layout_weight="67"
         android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="25dp"
+                android:id="@+id/restaurantName"
+                android:gravity="left|fill_vertical" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:id="@+id/foodName"
+                android:gravity="left|fill_vertical" />
+
+        </LinearLayout>
+
+
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="25dp"
-            android:id="@+id/historyName"
+            android:id="@+id/foodType"
             android:gravity="left|fill_vertical"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="25dp"
-            android:id="@+id/historyFoodType"
+            android:id="@+id/restaurantGrade"
             android:gravity="left|fill_vertical"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="25dp"
-            android:id="@+id/historyPeopleCnt"
-            android:gravity="left|fill_vertical"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:id="@+id/historyComment"
+            android:id="@+id/foodPrice"
             android:gravity="left|fill_vertical"/>
 
     </LinearLayout>

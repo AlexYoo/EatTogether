@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.example.tacademy.eattogether.R;
 import com.example.tacademy.eattogether.S;
@@ -17,9 +17,9 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class SNSLoginFragment extends Fragment {
 
-    Button facebookLoginButton;
-    Button kakaoLoginButton;
-    Button naverLoginButton;
+    ImageButton facebookLoginButton;
+    ImageButton kakaoLoginButton;
+    ImageButton naverLoginButton;
 
     public SNSLoginFragment() {
         // Required empty public constructor

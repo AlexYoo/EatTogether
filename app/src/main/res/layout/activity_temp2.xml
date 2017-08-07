@@ -1,9 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="50dp"
+    android:orientation="vertical"
+    android:weightSum="1"
     tools:context="com.example.tacademy.eattogether.Ui.temp2Activity">
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/temp2SelectRegion"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="left|fill_vertical"
+        android:text="여행 지역" />
+
+    <Button
+        android:id="@+id/temp2SelectDate"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="left|fill_vertical"
+        android:text="여행 일정"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="76dp" />
+
+    <Button
+        android:id="@+id/temp2SelectFood"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="left|fill_vertical"
+        android:text="음식 종류" />
+
+</LinearLayout>

@@ -99,10 +99,10 @@ public class HomeFragment extends Fragment {
         public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
             HomeModel homeRecycler = data.get(position);
             ListItemViewHolder item = (ListItemViewHolder) holder;
-            item.viewName.setText(homeRecycler.getViewName());
-            item.viewFoodType.setText(homeRecycler.getViewFoodType());
-            item.viewPeopleCnt.setText("" + homeRecycler.getViewPeopleCnt());
-            item.viewNotice.setText(homeRecycler.getViewNotice());
+            item.viewName.setText("이름 : " + homeRecycler.getViewName());
+            item.viewFoodType.setText("음식 종류 : " + homeRecycler.getViewFoodType());
+            item.viewPeopleCnt.setText("인원" + homeRecycler.getViewPeopleCnt());
+            item.viewNotice.setText("하고 싶은 말 : " + homeRecycler.getViewNotice());
         }
 
         @Override
