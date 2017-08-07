@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_date_picker"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.tacademy.eattogether.Ui.DatePickerActivity">
+
+
+    <!--생년월일 선택을 위한 DatePicker-->
+    <DatePicker
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:spinnersShown="true"
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner"
+        android:layout_gravity="center_vertical|center"
+        android:id="@+id/datePicker"
+        ></DatePicker>
+
+</LinearLayout>

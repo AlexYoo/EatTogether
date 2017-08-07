@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="horizontal"
+    android:weightSum="100"
+    android:layout_margin="10dp">
+
+    <ImageView
+        android:background="@color/black_overlay"
+        android:padding="1dp"
+        android:id="@+id/chattingThumbnail"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_weight="33" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_weight="67"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:id="@+id/chattingName"
+            android:gravity="left|fill_vertical"
+            android:text="이름 : " />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:id="@+id/chattingFoodType"
+            android:gravity="left|fill_vertical"
+            android:text="음식종류 : "/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:id="@+id/chattingPeopleCnt"
+            android:gravity="left|fill_vertical"
+            android:text="인원 : "/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:id="@+id/chattingComment"
+            android:gravity="left|fill_vertical"
+            android:text="하고 싶은 말 : "/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

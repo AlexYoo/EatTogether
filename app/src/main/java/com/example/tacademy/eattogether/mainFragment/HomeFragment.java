@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.tacademy.eattogether.Model.HomeRecycler;
+import com.example.tacademy.eattogether.Model.HomeModel;
 import com.example.tacademy.eattogether.R;
 
 import java.util.ArrayList;
@@ -26,7 +26,7 @@ public class HomeFragment extends Fragment {
     RecyclerView recyclerView;
     LinearLayoutManager linearLayoutManager;
     ListAdapter listAdapter;
-    ArrayList<HomeRecycler> data = new ArrayList<>();
+    ArrayList<HomeModel> data = new ArrayList<>();
 
     public HomeFragment() {
         // Required empty public constructor
@@ -50,7 +50,7 @@ public class HomeFragment extends Fragment {
         listAdapter = new ListAdapter(data);
         recyclerView.setAdapter(listAdapter);
         for(int i=0; i<4;i++) {
-            data.add(new HomeRecycler());
+            data.add(new HomeModel());
         }
         return view;
     }
@@ -62,7 +62,7 @@ public class HomeFragment extends Fragment {
 
 
     //뷰 홀더
-    public class ListItemViewHolder extends RecyclerView.ViewHolder{
+    private class ListItemViewHolder extends RecyclerView.ViewHolder{
 
         TextView viewName,viewFoodType,viewPeopleCnt,viewNotice;
 
@@ -78,14 +78,14 @@ public class HomeFragment extends Fragment {
 
     //어댑터터
 
-    public class ListAdapter extends RecyclerView.Adapter{
+    private class ListAdapter extends RecyclerView.Adapter{
 
-        ArrayList<HomeRecycler> data;
+        ArrayList<HomeModel> data;
 
         public ListAdapter() {
         }
 
-        public ListAdapter(ArrayList<HomeRecycler> data) {
+        public ListAdapter(ArrayList<HomeModel> data) {
             this.data = data;
         }
 
@@ -97,7 +97,7 @@ public class HomeFragment extends Fragment {
 
         @Override
         public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-            HomeRecycler homeRecycler = data.get(position);
+            HomeModel homeRecycler = data.get(position);
             ListItemViewHolder item = (ListItemViewHolder) holder;
             item.viewName.setText(homeRecycler.getViewName());
             item.viewFoodType.setText(homeRecycler.getViewFoodType());

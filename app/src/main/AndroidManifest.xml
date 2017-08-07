@@ -13,6 +13,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
@@ -20,7 +21,6 @@
         <activity
             android:name=".Ui.MainActivity"
             android:label="@string/title_activity_main">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,26 +29,23 @@
         </activity>
 
         <!-- 맨 처음 회원가입 화면 -->
-        <activity android:name=".Ui.SignUpActivity">
-
-        </activity>
+        <activity android:name=".Ui.SignUpActivity"></activity>
         <activity
             android:name=".Ui.ProfileActivity"
             android:label="@string/title_activity_profile"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Ui.RegionActivity" />
-        <activity android:name=".Ui.ScheduleActivity"></activity>
+        <activity android:name=".Ui.ScheduleActivity" />
         <activity android:name=".Ui.FoodTypeActivity" />
 
         <!-- top drawer로 바꿀 임시 액티비티 -->
-        <activity android:name=".Ui.tempActivity">
-
-        </activity>
-
+        <activity android:name=".Ui.tempActivity" />
         <activity
             android:name=".testActivity"
             android:label="@string/title_activity_test"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Ui.DatePickerActivity" />
+        <activity android:name=".Ui.temp2Activity"></activity>
     </application>
 
 </manifest>

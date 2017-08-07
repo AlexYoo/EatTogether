@@ -8,17 +8,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.tacademy.eattogether.R;
 import com.example.tacademy.eattogether.S;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    ImageButton profileImage;
+    CircleImageView profileImage;
     EditText profileName, profileIntroduction;
     TextView profileSex;
     Button profileBirthday;
@@ -28,7 +28,7 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        profileImage        = (ImageButton) findViewById(R.id.profileImage);
+        profileImage        = (CircleImageView) findViewById(R.id.profileImage);
         profileName         = (EditText) findViewById(R.id.profileName);
         profileIntroduction = (EditText) findViewById(R.id.profileIntroduction);
         profileBirthday     = (Button) findViewById(R.id.profileBirthday);

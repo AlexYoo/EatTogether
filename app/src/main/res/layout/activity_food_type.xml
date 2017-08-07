@@ -1,9 +1,259 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.tacademy.eattogether.Ui.FoodTypeActivity">
+    tools:context="com.example.tacademy.eattogether.Ui.FoodTypeActivity"
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="choose food type"
+            android:gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="45dp"
+                android:layout_width="60dp"
+                android:layout_height="50dp" />
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="45dp"
+                />
+
+            <Button
+
+                android:layout_width="60dp"
+                android:layout_height="50dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="45dp"
+                android:layout_width="60dp"
+                android:layout_height="50dp" />
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="45dp"
+                />
+
+            <Button
+
+                android:layout_width="60dp"
+                android:layout_height="50dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="45dp"
+                android:layout_width="60dp"
+                android:layout_height="50dp" />
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="45dp"
+                />
+
+            <Button
+
+                android:layout_width="60dp"
+                android:layout_height="50dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="45dp"
+                android:layout_width="60dp"
+                android:layout_height="50dp" />
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="45dp"
+                />
+
+            <Button
+
+                android:layout_width="60dp"
+                android:layout_height="50dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="45dp"
+                android:layout_width="60dp"
+                android:layout_height="50dp" />
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="45dp"
+                />
+
+            <Button
+
+                android:layout_width="60dp"
+                android:layout_height="50dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="45dp"
+                android:layout_width="60dp"
+                android:layout_height="50dp" />
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="45dp"
+                />
+
+            <Button
+
+                android:layout_width="60dp"
+                android:layout_height="50dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="45dp"
+                android:layout_width="60dp"
+                android:layout_height="50dp" />
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="45dp"
+                />
+
+            <Button
+
+                android:layout_width="60dp"
+                android:layout_height="50dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="45dp"
+                android:layout_width="60dp"
+                android:layout_height="50dp" />
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="45dp"
+                />
+
+            <Button
+
+                android:layout_width="60dp"
+                android:layout_height="50dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <Button
+            android:text="store"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="70dp"
+            android:layout_gravity="center"/>
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

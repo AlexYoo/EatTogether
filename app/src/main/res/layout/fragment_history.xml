@@ -4,13 +4,26 @@
     android:layout_height="match_parent"
     tools:context="com.example.tacademy.eattogether.mainFragment.HistoryFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!--tools:listItem : 커스텀 셀 프리뷰-->
+    <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/red_btn_bg_color"
+        android:id="@+id/historyRecyclerView"
+        android:padding="4dp"
+        tools:listitem="@layout/cell_main_home_list">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_marginTop="450dp"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="@android:color/holo_green_dark"
         android:gravity="left|center"
         android:text="여기는 히스토리"
         android:textSize="35dp"/>
+
+
 
 </FrameLayout>

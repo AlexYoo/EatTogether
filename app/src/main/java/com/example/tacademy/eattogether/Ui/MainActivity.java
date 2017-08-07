@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
     FragmentManager fragmentManager = getSupportFragmentManager();
-    FloatingActionButton tempFloatingButton; //임시 테스트용 버튼 -> 나중에 topdrawer로 구현하기
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -61,11 +60,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mTextMessage = (TextView) findViewById(R.id.message); //테스트용 텍스트 설정
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation); //네비게이션 아이템 끌어오기
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener); //네비게이션 아이템 리스너 설정
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, tempActivity.class));
+            }
+        });
+
+        FloatingActionButton fab2 = (FloatingActionButton) findViewById(R.id.fab2);
+        fab2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, tempActivity.class));

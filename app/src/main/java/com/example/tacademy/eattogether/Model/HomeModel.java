@@ -4,7 +4,7 @@ package com.example.tacademy.eattogether.Model;
  * Created by Tacademy on 2017-08-04.
  */
 
-public class HomeRecycler {
+public class HomeModel {
     public String viewName;
     public String viewFoodType;
     public int viewPeopleCnt;
@@ -12,10 +12,10 @@ public class HomeRecycler {
 
 
 
-    public HomeRecycler() {
+    public HomeModel() {
     }
 
-    public HomeRecycler(String viewName, String viewFoodType, int viewPeopleCnt, String viewNotice) {
+    public HomeModel(String viewName, String viewFoodType, int viewPeopleCnt, String viewNotice) {
         this.viewName = viewName;
         this.viewFoodType = viewFoodType;
         this.viewPeopleCnt = viewPeopleCnt;
