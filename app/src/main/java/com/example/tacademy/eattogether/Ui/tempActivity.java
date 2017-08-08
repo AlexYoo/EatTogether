@@ -58,8 +58,8 @@ public class tempActivity extends AppCompatActivity {
         minusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                    numOfPeople.setText(String.valueOf(--peopleCnt));
+                if(peopleCnt < 3) return;
+                numOfPeople.setText(String.valueOf(--peopleCnt));
             }
 
         });
@@ -67,7 +67,8 @@ public class tempActivity extends AppCompatActivity {
         plusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    numOfPeople.setText(String.valueOf(++peopleCnt));
+                if(peopleCnt > 7) return;
+                numOfPeople.setText(String.valueOf(++peopleCnt));
             }
         });
 

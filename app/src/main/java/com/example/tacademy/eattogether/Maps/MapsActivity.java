@@ -109,9 +109,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         cateSpinner = (Spinner)findViewById(R.id.cateSpinner);
         dist        = (EditText) findViewById(R.id.dist);
 
-        ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(this, R.array.cate, android.R.layout.simple_spinner_dropdown_item);
+        ArrayList<String> cateArray = new ArrayList<>();
+        cateArray.add("스타벅스");
+        cateArray.add("커피빈");
+//        ArrayAdapter<CharSequence> arrayAdapter1 = ArrayAdapter.createFromResource(this, R.array.cate, android.R.layout.simple_spinner_dropdown_item);
         // java 코드에서 리소스 가져오는 방법 : getResources().xxxx
-        ArrayAdapter<String> arrayAdapter1 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, getResources().getTextArray(R.array.cate));
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, cateArray);
+
+
 
         cateSpinner.setAdapter(arrayAdapter);
         cateSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
