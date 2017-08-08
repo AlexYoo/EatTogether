@@ -14,7 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.tacademy.eattogether.Maps.GoodRestMapsActivity;
+import com.example.tacademy.eattogether.Maps.MapsActivity;
 import com.example.tacademy.eattogether.Model.GoodRestModel;
 import com.example.tacademy.eattogether.R;
 
@@ -56,7 +56,7 @@ public class GoodRestFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getContext(), GoodRestMapsActivity.class));
+                startActivity(new Intent(getContext(), MapsActivity.class)); //GoodRestMapsActivity로 가도록 바꿔야함
             }
         });
         return view;

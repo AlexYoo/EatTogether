@@ -85,7 +85,7 @@ public class GoodRestMapsActivity extends AppCompatActivity
         addr = (EditText)findViewById(R.id.addr);
         // 지도를 소유하고 있는 플레그먼트 획득
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
+                .findFragmentById(R.id.fragmentMap);
         // 지도 비동기화진행
         mapFragment.getMapAsync(this);
 
