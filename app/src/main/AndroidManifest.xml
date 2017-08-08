@@ -21,16 +21,16 @@
         <activity
             android:name=".Ui.MainActivity"
             android:label="@string/title_activity_main">
-
-        </activity>
-
-        <!-- 맨 처음 회원가입 화면 -->
-        <activity android:name=".Ui.SignUpActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <!-- 맨 처음 회원가입 화면 -->
+        <activity android:name=".Ui.SignUpActivity">
+
 
         </activity>
         <activity
@@ -67,7 +67,6 @@
 
         </activity>
         <activity android:name=".Ui.temp3Activity" />
-        <activity android:name=".Maps.GoodRestMapsActivity"></activity>
     </application>
 
 </manifest>
