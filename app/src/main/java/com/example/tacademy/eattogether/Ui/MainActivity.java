@@ -70,13 +70,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        FloatingActionButton fab2 = (FloatingActionButton) findViewById(R.id.fab2);
-        fab2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, temp2Activity.class));
-            }
-        });
+
+
     }
 
     public void switchToHomeFragment(){ //홈 화면으로 이동

@@ -2,18 +2,22 @@ package com.example.tacademy.eattogether.mainFragment;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.tacademy.eattogether.Model.HomeModel;
 import com.example.tacademy.eattogether.R;
+import com.example.tacademy.eattogether.Ui.temp2Activity;
 
 import java.util.ArrayList;
 
@@ -52,6 +56,17 @@ public class HomeFragment extends Fragment {
         for(int i=0; i<4;i++) {
             data.add(new HomeModel());
         }
+        data.get(0).setImage(R.drawable.food_default1);
+        data.get(1).setImage(R.drawable.food_default2);
+        data.get(2).setImage(R.drawable.food_default3);
+        data.get(3).setImage(R.drawable.food_default4);
+        FloatingActionButton fab2 = (FloatingActionButton) view.findViewById(R.id.fab2);
+        fab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), temp2Activity.class));
+            }
+        });
         return view;
     }
 
@@ -65,6 +80,7 @@ public class HomeFragment extends Fragment {
     private class ListItemViewHolder extends RecyclerView.ViewHolder{
 
         TextView viewName,viewFoodType,viewPeopleCnt,viewNotice;
+        ImageView image;
 
         public ListItemViewHolder(View itemView) {
             super(itemView);
@@ -99,9 +115,11 @@ public class HomeFragment extends Fragment {
         public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
             HomeModel homeRecycler = data.get(position);
             ListItemViewHolder item = (ListItemViewHolder) holder;
+
+
             item.viewName.setText("이름 : " + homeRecycler.getViewName());
             item.viewFoodType.setText("음식 종류 : " + homeRecycler.getViewFoodType());
-            item.viewPeopleCnt.setText("인원" + homeRecycler.getViewPeopleCnt());
+            item.viewPeopleCnt.setText("인원 : " + homeRecycler.getViewPeopleCnt());
             item.viewNotice.setText("하고 싶은 말 : " + homeRecycler.getViewNotice());
         }
 

@@ -9,17 +9,19 @@ public class HomeModel {
     public String viewFoodType;
     public int viewPeopleCnt;
     public String viewNotice;
+    public int image;
 
 
 
     public HomeModel() {
     }
 
-    public HomeModel(String viewName, String viewFoodType, int viewPeopleCnt, String viewNotice) {
+    public HomeModel(String viewName, String viewFoodType, int viewPeopleCnt, String viewNotice, int image) {
         this.viewName = viewName;
         this.viewFoodType = viewFoodType;
         this.viewPeopleCnt = viewPeopleCnt;
         this.viewNotice = viewNotice;
+        this.image = image;
     }
 
     public String getViewName() {
@@ -52,5 +54,13 @@ public class HomeModel {
 
     public void setViewNotice(String viewNotice) {
         this.viewNotice = viewNotice;
+    }
+
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
     }
 }

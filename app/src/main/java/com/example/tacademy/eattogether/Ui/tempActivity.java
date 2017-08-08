@@ -1,5 +1,10 @@
 package com.example.tacademy.eattogether.Ui;
 
+
+/*
+* HomeFragment에서 새 글 작성을 누르면 나오는 액티비티
+* */
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

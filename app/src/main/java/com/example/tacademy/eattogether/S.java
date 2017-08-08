@@ -3,11 +3,16 @@ package com.example.tacademy.eattogether;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.location.Address;
 import android.os.Build;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.widget.Toast;
+
+import com.example.tacademy.eattogether.Maps.GeoPoint;
+import com.example.tacademy.eattogether.Maps.GeoTrans;
+import com.squareup.otto.Bus;
 
 import java.util.UUID;
 
@@ -162,5 +167,44 @@ public class S {
         alert.setTitleText(title).setContentText(msg).setCancelable(false);
         alert.show();
         return alert;
+    }
+    // =============================================================================================
+    // 버스
+    Bus gpsBus = new Bus();
+    public Bus getGpsBus() {
+        return gpsBus;
+    }
+    // =============================================================================================
+    // Address => 시군구동 표시
+    public String getTransferAddr(Address address)
+    {
+        if( address==null ) return "";
+        return String.format("%s %s %s", address.getAdminArea(), address.getLocality(), address.getThoroughfare());
+    }
+    // =============================================================================================
+    // 좌표 변환 -> KATEC -> GEO
+    public GeoPoint transGeoToKatec(GeoPoint point)
+    {
+        return GeoTrans.convert(GeoTrans.KATEC, GeoTrans.GEO, point);
+    }
+    // =============================================================================================
+    // String -> double
+    public double getDouble(String src)
+    {
+        try {
+            return Double.parseDouble(src);
+        } catch (NumberFormatException e) {
+            return 0;
+        }
+    }
+    public String changeBrand(String brand)
+    {
+        if( brand.equals("스타벅스") ){
+            return "starbucks";
+        }
+        else if( brand.equals("커피빈") ){
+            return "coffeebean";
+        }
+        return "";
     }
 }
