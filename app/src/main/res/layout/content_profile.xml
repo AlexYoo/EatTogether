@@ -76,21 +76,37 @@
 
     </LinearLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:gravity="center"><!--생년월일 스크롤로 구현하기-->
+        <TextView
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded"
+            android:layout_gravity="center"
+            android:gravity="center|left"
+            android:id="@+id/profileBirthday"
+            android:layout_width="324dp"
+            android:layout_height="46dp"
+            android:paddingLeft="10dp"
+            android:text="생년월일"
+            android:textSize="25dp"
+            android:textColor="#8d97d5"
+             />
+        <TextView
+            android:id="@+id/YMD"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="11dp"
+            android:layout_marginEnd="11dp"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="YYYY-MM-DD"
+            android:textSize="20dp"
+            android:layout_alignRight="@+id/profileBirthday"
+            android:layout_alignEnd="@+id/profileBirthday" />
+    </RelativeLayout>
 
-    <!--생년월일 스크롤로 구현하기-->
-    <Button
-        android:layout_margin="10dp"
-        android:background="@drawable/rounded"
-        android:layout_gravity="center"
-        android:gravity="center|left"
-        android:id="@+id/profileBirthday"
-        android:layout_width="324dp"
-        android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
-        android:text="생년월일"
-        android:textSize="25dp"
-        android:textColor="#8d97d5"
-        android:layout_below="@+id/profileSex" />
 
     <EditText
         android:background="@drawable/rounded"

@@ -14,19 +14,26 @@ import com.example.tacademy.eattogether.viewPagerFragment.Tuto2Fragment;
 import com.example.tacademy.eattogether.viewPagerFragment.Tuto3Fragment;
 import com.example.tacademy.eattogether.viewPagerFragment.Tuto4Fragment;
 
+import me.relex.circleindicator.CircleIndicator;
+
 public class SignUpActivity extends AppCompatActivity {
 
     ViewPager tutorialViewPager;
     static final int NUM_OF_FRAGMENTS = 4;
+    CircleIndicator indicator;
+    MyPagerAdapter myPagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+        myPagerAdapter = new MyPagerAdapter(getSupportFragmentManager());
         tutorialViewPager = (ViewPager) findViewById(R.id.tutorialViewPager);
-
-        tutorialViewPager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
+        indicator  = (CircleIndicator) findViewById(R.id.indicator);
+        tutorialViewPager.setAdapter(myPagerAdapter);
+        indicator.setViewPager(tutorialViewPager);
         tutorialViewPager.setCurrentItem(0);
+        myPagerAdapter.registerDataSetObserver(indicator.getDataSetObserver());
 
 
     }

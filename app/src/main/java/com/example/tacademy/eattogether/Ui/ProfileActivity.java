@@ -1,5 +1,6 @@
 package com.example.tacademy.eattogether.Ui;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -9,9 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatDrawableManager;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.tacademy.eattogether.R;
@@ -30,10 +29,25 @@ import io.reactivex.schedulers.Schedulers;
 
 public class ProfileActivity extends AppCompatActivity {
 
+    public final static int REQUEST_MY_ACTIVITY = 0;
+
     CircleImageView profileImage;
     EditText profileName, profileIntroduction;
     TextView profileSex;
-    Button profileBirthday;
+    TextView profileBirthday;
+    int myYear, myMonth, myDay;
+    TextView YMD;
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == REQUEST_MY_ACTIVITY && resultCode == Activity.RESULT_OK){
+            myYear  = data.getIntExtra(DatePickerActivity.YEAR, 1980);
+            myMonth = data.getIntExtra(DatePickerActivity.MONTH, 01)+1;
+            myDay   = data.getIntExtra(DatePickerActivity.DAY, 01);
+            YMD.setText(myYear + " - " + myMonth + " - " + myDay);
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +57,9 @@ public class ProfileActivity extends AppCompatActivity {
         profileImage        = (CircleImageView) findViewById(R.id.profileImage);
         profileName         = (EditText) findViewById(R.id.profileName);
         profileIntroduction = (EditText) findViewById(R.id.profileIntroduction);
-        profileBirthday     = (Button) findViewById(R.id.profileBirthday);
+        profileBirthday     = (TextView) findViewById(R.id.profileBirthday);
         profileSex          = (TextView) findViewById(R.id.profileSex);
+        YMD                 = (TextView) findViewById(R.id.YMD);
 
         initUI();
     }
@@ -78,40 +93,23 @@ public class ProfileActivity extends AppCompatActivity {
         profileImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                S.getInstance().showPopup(ProfileActivity.this, "프로필 사진", "여기서 프로필을 변경합니다.", 2);
-                ImageView profile;
+                S.getInstance().showPopup3(ProfileActivity.this,
+                        "저장 방법 선택",
+                        "사진을 가져올 방법을 선택하세요.",
+                        "camera", new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                sweetAlertDialog.dismissWithAnimation();
+                                onCamera(null);
+                            }
+                        }, "photo", new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                sweetAlertDialog.dismissWithAnimation();
+                                onPhoto(null);
+                            }
+                        });
 
-                profile = (ImageView) findViewById(R.id.profileImage);
-                // 클릭 이벤트를 뷰에 동적으로 붙이기
-                profile.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        // 사용자가 선택할수 있게 팝업 처
-                        S.getInstance().showPopup3(getBaseContext(),
-                                "알림",
-                                "사진을 가져올 방법을 선택하세요.",
-                                "camera",
-                                new SweetAlertDialog.OnSweetClickListener() {
-                                    @Override
-                                    public void onClick(SweetAlertDialog sweetAlertDialog) {
-                                        sweetAlertDialog.dismissWithAnimation();
-                                        onCamera(null);
-                                    }
-                                },
-                                "photo",
-                                new SweetAlertDialog.OnSweetClickListener() {
-                                    @Override
-                                    public void onClick(SweetAlertDialog sweetAlertDialog) {
-                                        sweetAlertDialog.dismissWithAnimation();
-                                        onPhoto(null);
-                                        //onFiles(null);
-                                    }
-                                }
-                        );
-
-                        //onPicture(null);
-                    }
-                });
             }
 
         });
@@ -120,10 +118,13 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 S.getInstance().showPopup(ProfileActivity.this, "생년월일", "여기서 달력을 띄웁니다.", 2);
-                startActivity(new Intent(getBaseContext(), DatePickerActivity.class));
+                Intent intent = new Intent(getBaseContext(), DatePickerActivity.class);
+                startActivityForResult(intent, REQUEST_MY_ACTIVITY);
             }
         });
     }
+
+
 
     public void onPhoto(View view){
         UCrop.Options options = new UCrop.Options();
@@ -145,27 +146,7 @@ public class ProfileActivity extends AppCompatActivity {
                     bind(response.data());
                 });
     }
-    public void onFiles(View view){
-        UCrop.Options options = new UCrop.Options();
-        options.setToolbarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
 
-        // crop(options) => 사진을 찍은후 편집 메뉴를 띄운다
-        // usingCamera() => 카메라를 띄운다
-        // usingGallery() => 포토 앨범을 띄운다
-        RxPaparazzo.single(this)
-                .crop(options)
-                .usingFiles()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(response -> {
-                    // See response.resultCode() doc
-                    if (response.resultCode() != RESULT_OK) {
-
-                        return;
-                    }
-                    bind(response.data());
-                });
-    }
 
     public void onCamera(View view){
         UCrop.Options options = new UCrop.Options();
@@ -202,7 +183,5 @@ public class ProfileActivity extends AppCompatActivity {
             profileImage.setImageDrawable(drawable);
         }
     }
-
-
 
 }
