@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,8 @@ import android.widget.TextView;
 
 import com.example.tacademy.eattogether.Model.HistoryModel;
 import com.example.tacademy.eattogether.R;
+import com.example.tacademy.eattogether.itemDecorator.ItemTouchHelperCallback;
+import com.example.tacademy.eattogether.itemDecorator.ItemTouchHelperListener;
 
 import java.util.ArrayList;
 
@@ -20,7 +23,7 @@ public class HistoryFragment extends Fragment {
 
     RecyclerView recyclerView;
     LinearLayoutManager linearLayoutManager;
-    ListAdapter listAdapter;
+    MyHistoryRecyclerViewAdapter myHistoryRecyclerViewAdapter;
     ArrayList<HistoryModel> data = new ArrayList<>();
 
     public HistoryFragment() {
@@ -42,11 +45,16 @@ public class HistoryFragment extends Fragment {
         linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
-        listAdapter = new ListAdapter(data);
-        recyclerView.setAdapter(listAdapter);
+        myHistoryRecyclerViewAdapter = new MyHistoryRecyclerViewAdapter(data);
+        recyclerView.setAdapter(myHistoryRecyclerViewAdapter);
         for(int i=0; i<4;i++) {
             data.add(new HistoryModel());
         }
+
+
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new ItemTouchHelperCallback(myHistoryRecyclerViewAdapter));
+        itemTouchHelper.attachToRecyclerView(recyclerView);
+
         return view;
     }
 
@@ -73,14 +81,15 @@ public class HistoryFragment extends Fragment {
 
     //어댑터터
 
-    private class ListAdapter extends RecyclerView.Adapter{
+    private class MyHistoryRecyclerViewAdapter extends RecyclerView.Adapter
+    implements ItemTouchHelperListener{
 
         ArrayList<HistoryModel> data;
 
-        public ListAdapter() {
+        public MyHistoryRecyclerViewAdapter() {
         }
 
-        public ListAdapter(ArrayList<HistoryModel> data) {
+        public MyHistoryRecyclerViewAdapter(ArrayList<HistoryModel> data) {
             this.data = data;
         }
 
@@ -103,6 +112,25 @@ public class HistoryFragment extends Fragment {
         @Override
         public int getItemCount() {
             return data.size();
+        }
+
+        @Override
+        public boolean onItemMoved(int fromPosition, int toPosition) {
+            if(fromPosition <0 || toPosition >= data.size() || toPosition <0 || toPosition >= data.size()) {
+                return false;
+            }
+            HistoryModel fromItem = data.get(fromPosition);
+            data.remove(fromPosition);
+            data.add(toPosition, fromItem);
+
+            notifyItemMoved(fromPosition, toPosition);
+            return true;
+        }
+
+        @Override
+        public void onItemRemove(int position) {
+            data.remove(position);
+            notifyItemRemoved(position);
         }
     }
 

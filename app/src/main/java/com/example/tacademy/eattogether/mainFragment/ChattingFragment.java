@@ -2,11 +2,13 @@ package com.example.tacademy.eattogether.mainFragment;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +16,14 @@ import android.widget.TextView;
 
 import com.example.tacademy.eattogether.Model.ChattingModel;
 import com.example.tacademy.eattogether.R;
+import com.example.tacademy.eattogether.Ui.NewPostActivity;
+import com.example.tacademy.eattogether.itemDecorator.ItemTouchHelperCallback;
+import com.example.tacademy.eattogether.itemDecorator.ItemTouchHelperListener;
+import com.example.tacademy.eattogether.util.S;
 
 import java.util.ArrayList;
+
+import cn.pedant.SweetAlert.SweetAlertDialog;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,7 +33,7 @@ public class ChattingFragment extends Fragment {
 
     RecyclerView recyclerView;
     LinearLayoutManager linearLayoutManager;
-    ListAdapter listAdapter;
+    MyChattingRecyclerViewAdapter myChattingRecyclerViewAdapter;
     ArrayList<ChattingModel> data = new ArrayList<>();
 
     public ChattingFragment() {
@@ -47,11 +55,14 @@ public class ChattingFragment extends Fragment {
         linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
-        listAdapter = new ListAdapter(data);
-        recyclerView.setAdapter(listAdapter);
+        myChattingRecyclerViewAdapter = new MyChattingRecyclerViewAdapter(data);
+        recyclerView.setAdapter(myChattingRecyclerViewAdapter);
         for(int i=0; i<4;i++) {
             data.add(new ChattingModel());
         }
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new ItemTouchHelperCallback(myChattingRecyclerViewAdapter));
+        itemTouchHelper.attachToRecyclerView(recyclerView);
+        
         return view;
     }
 
@@ -73,19 +84,40 @@ public class ChattingFragment extends Fragment {
             foodType = itemView.findViewById(R.id.chattingFoodType);
             peopleCnt = itemView.findViewById(R.id.chattingPeopleCnt);
             comment = itemView.findViewById(R.id.chattingComment);
+
+            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
+                    S.getInstance().showPopup3(getContext(), "수정", "글을 수정 하시겠습니까?",
+                            "다음화면", new SweetAlertDialog.OnSweetClickListener() {
+                                @Override
+                                public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                    sweetAlertDialog.dismissWithAnimation();
+                                    startActivity(new Intent(getContext(), NewPostActivity.class));
+                                }
+                            }, "끄기", new SweetAlertDialog.OnSweetClickListener() {
+                                @Override
+                                public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                    sweetAlertDialog.dismissWithAnimation();
+                                }
+                            });
+
+                    return false;
+                }
+            });
         }
     }
 
     //어댑터터
 
-    private class ListAdapter extends RecyclerView.Adapter{
+    private class MyChattingRecyclerViewAdapter extends RecyclerView.Adapter implements ItemTouchHelperListener{
 
         ArrayList<ChattingModel> data;
 
-        public ListAdapter() {
+        public MyChattingRecyclerViewAdapter() {
         }
 
-        public ListAdapter(ArrayList<ChattingModel> data) {
+        public MyChattingRecyclerViewAdapter(ArrayList<ChattingModel> data) {
             this.data = data;
         }
 
@@ -101,13 +133,32 @@ public class ChattingFragment extends Fragment {
             ListItemViewHolder item = (ListItemViewHolder) holder;
             item.ownerName.setText("이름 : " + chattingModel.getOwnerName());
             item.foodType.setText("음식 종류 : " + chattingModel.getFoodType());
-            item.peopleCnt.setText("인원"+chattingModel.getPeopleCnt()); //총인원, 참여인원 나누기
+            item.peopleCnt.setText("인원 : "+chattingModel.getPeopleCnt()); //총인원, 참여인원 나누기
             item.comment.setText("하고 싶은 말 : " + chattingModel.getComment());
         }
 
         @Override
         public int getItemCount() {
             return data.size();
+        }
+
+        @Override
+        public boolean onItemMoved(int fromPosition, int toPosition) {
+            if(fromPosition <0 || toPosition >= data.size() || toPosition <0 || toPosition >= data.size()) {
+                return false;
+            }
+            ChattingModel fromItem = data.get(fromPosition);
+            data.remove(fromPosition);
+            data.add(toPosition, fromItem);
+
+            notifyItemMoved(fromPosition, toPosition);
+            return true;
+        }
+
+        @Override
+        public void onItemRemove(int position) {
+            data.remove(position);
+            notifyItemRemoved(position);
         }
     }
 

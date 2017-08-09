@@ -8,7 +8,7 @@
     android:layout_marginTop="50dp"
     android:orientation="vertical"
     android:weightSum="1"
-    tools:context="com.example.tacademy.eattogether.Ui.temp2Activity">
+    tools:context="com.example.tacademy.eattogether.Ui.HomeTopDrawerActivity">
 
     <Button
         android:id="@+id/temp2SelectRegion"

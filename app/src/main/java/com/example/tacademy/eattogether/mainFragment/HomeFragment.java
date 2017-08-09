@@ -6,11 +6,9 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,14 +17,11 @@ import android.widget.TextView;
 
 import com.example.tacademy.eattogether.Model.HomeModel;
 import com.example.tacademy.eattogether.R;
-import com.example.tacademy.eattogether.S;
 import com.example.tacademy.eattogether.Ui.FoodTypeActivity;
+import com.example.tacademy.eattogether.Ui.NewPostActivity;
 import com.example.tacademy.eattogether.Ui.RegionActivity;
 import com.example.tacademy.eattogether.Ui.ScheduleActivity;
-import com.example.tacademy.eattogether.Ui.temp2Activity;
-import com.example.tacademy.eattogether.Ui.tempActivity;
-import com.example.tacademy.eattogether.itemDecorator.ItemTouchHelperCallback;
-import com.example.tacademy.eattogether.itemDecorator.ItemTouchHelperListener;
+import com.example.tacademy.eattogether.util.S;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -53,7 +48,6 @@ public class HomeFragment extends Fragment {
     public HomeFragment() {
         // Required empty public constructor
     }
-
 
 
     @Override
@@ -101,17 +95,7 @@ public class HomeFragment extends Fragment {
             data.add(new HomeModel());
         }
 
-        FloatingActionButton fab2 = (FloatingActionButton) view.findViewById(R.id.fab2);
-        fab2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getContext(), temp2Activity.class));
-            }
-        });
 
-
-        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new ItemTouchHelperCallback(myRecyclerViewAdapter));
-        itemTouchHelper.attachToRecyclerView(recyclerView);
         initImageLoader();
         return view;
     }
@@ -125,7 +109,7 @@ public class HomeFragment extends Fragment {
 //                            @Override
 //                            public void onClick(SweetAlertDialog sweetAlertDialog) {
 //                                sweetAlertDialog.dismissWithAnimation();
-//                                startActivity(new Intent(getContext(), tempActivity.class));
+//                                startActivity(new Intent(getContext(), NewPostActivity.class));
 //                            }
 //                        }, "끄기", new SweetAlertDialog.OnSweetClickListener() {
 //                            @Override
@@ -186,7 +170,7 @@ public class HomeFragment extends Fragment {
                                 @Override
                                 public void onClick(SweetAlertDialog sweetAlertDialog) {
                                     sweetAlertDialog.dismissWithAnimation();
-                                    startActivity(new Intent(getContext(), tempActivity.class));
+                                    startActivity(new Intent(getContext(), NewPostActivity.class));
                                 }
                             }, "끄기", new SweetAlertDialog.OnSweetClickListener() {
                                 @Override
@@ -206,7 +190,7 @@ public class HomeFragment extends Fragment {
 
     //어댑터터
 
-    private class MyRecyclerViewAdapter extends RecyclerView.Adapter implements ItemTouchHelperListener{
+    private class MyRecyclerViewAdapter extends RecyclerView.Adapter{
 
         ArrayList<HomeModel> data;
 
@@ -225,14 +209,12 @@ public class HomeFragment extends Fragment {
 
         @Override
         public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-            HomeModel homeRecycler = data.get(position);
+            HomeModel homeModel = data.get(position);
             ListItemViewHolder item = (ListItemViewHolder) holder;
-
-
-            item.viewName.setText("이름 : " + homeRecycler.getViewName());
-            item.viewFoodType.setText("음식 종류 : " + homeRecycler.getViewFoodType());
-            item.viewPeopleCnt.setText("인원 : " + homeRecycler.getViewPeopleCnt());
-            item.viewNotice.setText("하고 싶은 말 : " + homeRecycler.getViewNotice());
+            item.viewName.setText("이름 : " + homeModel.getViewName());
+            item.viewFoodType.setText("음식 종류 : " + homeModel.getViewFoodType());
+            item.viewPeopleCnt.setText("인원 : " + homeModel.getViewPeopleCnt());
+            item.viewNotice.setText("하고 싶은 말 : " + homeModel.getViewNotice());
         }
 
         @Override
@@ -240,24 +222,7 @@ public class HomeFragment extends Fragment {
             return data.size();
         }
 
-        @Override
-        public boolean onItemMoved(int fromPosition, int toPosition) {
-            if(fromPosition <0 || toPosition >= data.size() || toPosition <0 || toPosition >= data.size()) {
-                return false;
-            }
-            HomeModel fromItem = data.get(fromPosition);
-            data.remove(fromPosition);
-            data.add(toPosition, fromItem);
 
-            notifyItemMoved(fromPosition, toPosition);
-            return true;
-        }
-
-        @Override
-        public void onItemRemove(int position) {
-            data.remove(position);
-            notifyItemRemoved(position);
-        }
 
 
     }

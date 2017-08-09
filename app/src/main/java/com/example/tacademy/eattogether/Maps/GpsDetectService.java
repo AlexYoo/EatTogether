@@ -8,7 +8,7 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.IBinder;
 
-import com.example.tacademy.eattogether.S;
+import com.example.tacademy.eattogether.util.S;
 
 /**
  * GPS 디텍팅한는 코드 (최신 방법론 이전 방법)

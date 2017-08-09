@@ -14,7 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.tacademy.eattogether.R;
-import com.example.tacademy.eattogether.S;
+import com.example.tacademy.eattogether.util.S;
 import com.miguelbcr.ui.rx_paparazzo2.RxPaparazzo;
 import com.miguelbcr.ui.rx_paparazzo2.entities.FileData;
 import com.squareup.picasso.Picasso;

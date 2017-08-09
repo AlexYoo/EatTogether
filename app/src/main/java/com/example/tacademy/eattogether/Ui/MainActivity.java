@@ -1,15 +1,11 @@
 package com.example.tacademy.eattogether.Ui;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.TextView;
 
 import com.example.tacademy.eattogether.R;
 import com.example.tacademy.eattogether.mainFragment.ChattingFragment;
@@ -20,7 +16,6 @@ import com.example.tacademy.eattogether.mainFragment.SettingsFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView mTextMessage;
     FragmentManager fragmentManager = getSupportFragmentManager();
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -63,13 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation); //네비게이션 아이템 끌어오기
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener); //네비게이션 아이템 리스너 설정
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, tempActivity.class));
-            }
-        });
+
     }
 
     public void switchToHomeFragment(){ //홈 화면으로 이동

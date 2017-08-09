@@ -10,7 +10,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
-        android:name=".EatTogetherApplication"
+        android:name=".util.EatTogetherApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -32,35 +32,41 @@
         <activity
             android:name=".Ui.MainActivity"
             android:label="@string/title_activity_main">
-
-        </activity>
-
-        <!-- 맨 처음 회원가입 화면 -->
-        <activity android:name=".Ui.SignUpActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+
+        <!-- 맨 처음 회원가입 화면 -->
+        <activity android:name=".Ui.SignUpActivity" />
+
+        <!-- 프로필 화면 -->
         <activity
             android:name=".Ui.ProfileActivity"
-            android:label="@string/title_activity_profile">
-        </activity>
+            android:label="@string/title_activity_profile"></activity>
+
+        <!-- 지역 설정 화면 -->
         <activity android:name=".Ui.RegionActivity" />
+
+        <!-- 일정 선택 화면 -->
         <activity android:name=".Ui.ScheduleActivity" />
+
+        <!-- 음식 종류 선택 화면 -->
         <activity android:name=".Ui.FoodTypeActivity" />
 
         <!-- top drawer로 바꿀 임시 액티비티 -->
-        <activity android:name=".Ui.tempActivity" />
+        <activity android:name=".Ui.NewPostActivity" />
+        테스트 액티비티
         <activity
             android:name=".testActivity"
             android:label="@string/title_activity_test"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Ui.DatePickerActivity"
-            android:theme="@style/Theme.AppCompat.Dialog"/>
-        <activity android:name=".Ui.temp2Activity" />
+        <activity
+            android:name=".Ui.DatePickerActivity"
+            android:theme="@style/Theme.AppCompat.Dialog" />
+        <activity android:name=".Ui.HomeTopDrawerActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -75,8 +81,9 @@
 
         <activity
             android:name=".Maps.MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
-        <activity android:name=".Ui.temp3Activity" />
+            android:label="@string/title_activity_maps" />
+        <activity android:name=".Ui.GoodRestTopDrawerActivity" />
+        <activity android:name=".Ui.MyFavoriteActivity"></activity>
     </application>
 
 </manifest>

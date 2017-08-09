@@ -5,11 +5,11 @@ import android.os.Bundle;
 
 import com.example.tacademy.eattogether.R;
 
-public class temp3Activity extends AppCompatActivity {
+public class MyFavoriteActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_temp3);
+        setContentView(R.layout.activity_my_favorite);
     }
 }

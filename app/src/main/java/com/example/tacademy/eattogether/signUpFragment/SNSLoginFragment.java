@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 
 import com.example.tacademy.eattogether.R;
-import com.example.tacademy.eattogether.S;
+import com.example.tacademy.eattogether.util.S;
 import com.example.tacademy.eattogether.Ui.ProfileActivity;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;

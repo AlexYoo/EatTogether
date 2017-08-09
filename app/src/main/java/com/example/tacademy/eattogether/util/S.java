@@ -1,4 +1,4 @@
-package com.example.tacademy.eattogether;
+package com.example.tacademy.eattogether.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;

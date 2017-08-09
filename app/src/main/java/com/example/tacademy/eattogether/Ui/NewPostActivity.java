@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 import com.example.tacademy.eattogether.R;
 
-public class tempActivity extends AppCompatActivity {
+public class NewPostActivity extends AppCompatActivity {
     Button selectRegion, selectDate, selectFood, minusButton, plusButton; //지역, 날짜, 음식 선택
     TextView numOfPeople; //사람 수
     int peopleCnt;
@@ -24,7 +24,7 @@ public class tempActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_temp);
+        setContentView(R.layout.activity_new_post);
 
         peopleCnt    = 2;
         selectRegion = (Button) findViewById(R.id.selectRegion);
@@ -37,21 +37,21 @@ public class tempActivity extends AppCompatActivity {
         selectRegion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(tempActivity.this, RegionActivity.class));
+                startActivity(new Intent(NewPostActivity.this, RegionActivity.class));
             }
         });
 
         selectDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(tempActivity.this, ScheduleActivity.class));
+                startActivity(new Intent(NewPostActivity.this, ScheduleActivity.class));
             }
         });
 
         selectFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(tempActivity.this, FoodTypeActivity.class));
+                startActivity(new Intent(NewPostActivity.this, FoodTypeActivity.class));
             }
         });
 

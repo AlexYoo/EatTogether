@@ -32,7 +32,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.tacademy.eattogether.R;
-import com.example.tacademy.eattogether.S;
+import com.example.tacademy.eattogether.util.S;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;

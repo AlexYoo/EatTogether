@@ -3,7 +3,7 @@ package com.example.tacademy.eattogether.itemDecorator;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 
-import com.example.tacademy.eattogether.S;
+import com.example.tacademy.eattogether.util.S;
 
 /**
  * Created by Tacademy on 2017-08-08.

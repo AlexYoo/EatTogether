@@ -30,18 +30,25 @@
             android:id="@+id/content"
             android:rotation="180">
             <Button
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="10dp"
                 android:id="@+id/selectRegion"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginBottom="20dp"
+                android:background="@drawable/rounded_theme_color"
                 android:gravity="left|fill_vertical"
                 android:text="여행 지역" />
 
             <Button
                 android:id="@+id/selectFood"
+                android:background="@drawable/rounded_theme_color"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
                 android:gravity="left|fill_vertical"
                 android:text="음식 종류" />
 
