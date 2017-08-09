@@ -14,11 +14,15 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.tacademy.eattogether.Model.HomeModel;
 import com.example.tacademy.eattogether.R;
 import com.example.tacademy.eattogether.S;
+import com.example.tacademy.eattogether.Ui.FoodTypeActivity;
+import com.example.tacademy.eattogether.Ui.RegionActivity;
+import com.example.tacademy.eattogether.Ui.ScheduleActivity;
 import com.example.tacademy.eattogether.Ui.temp2Activity;
 import com.example.tacademy.eattogether.Ui.tempActivity;
 import com.example.tacademy.eattogether.itemDecorator.ItemTouchHelperCallback;
@@ -40,8 +44,10 @@ public class HomeFragment extends Fragment {
 
     RecyclerView recyclerView;
     LinearLayoutManager linearLayoutManager;
-    ListAdapter listAdapter;
+    MyRecyclerViewAdapter myRecyclerViewAdapter;
     ArrayList<HomeModel> data = new ArrayList<>();
+    Button selectRegion, selectDate, selectFood;
+
     ImageLoader imageLoader;
     DisplayImageOptions options;
     public HomeFragment() {
@@ -63,9 +69,34 @@ public class HomeFragment extends Fragment {
         linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
-        listAdapter = new ListAdapter(data);
+        selectDate   = view.findViewById(R.id.selectDate);
+        selectFood   = view.findViewById(R.id.selectFood);
+        selectRegion = view.findViewById(R.id.selectRegion);
 
-        recyclerView.setAdapter(listAdapter);
+        selectDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), ScheduleActivity.class));
+            }
+        });
+
+        selectFood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), FoodTypeActivity.class));
+            }
+        });
+
+        selectRegion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), RegionActivity.class));
+            }
+        });
+
+        myRecyclerViewAdapter = new MyRecyclerViewAdapter(data);
+
+        recyclerView.setAdapter(myRecyclerViewAdapter);
         for(int i=0; i<4;i++) {
             data.add(new HomeModel());
         }
@@ -79,7 +110,7 @@ public class HomeFragment extends Fragment {
         });
 
 
-        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new ItemTouchHelperCallback(listAdapter));
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new ItemTouchHelperCallback(myRecyclerViewAdapter));
         itemTouchHelper.attachToRecyclerView(recyclerView);
         initImageLoader();
         return view;
@@ -175,14 +206,14 @@ public class HomeFragment extends Fragment {
 
     //어댑터터
 
-    private class ListAdapter extends RecyclerView.Adapter implements ItemTouchHelperListener{
+    private class MyRecyclerViewAdapter extends RecyclerView.Adapter implements ItemTouchHelperListener{
 
         ArrayList<HomeModel> data;
 
-        public ListAdapter() {
+        public MyRecyclerViewAdapter() {
         }
 
-        public ListAdapter(ArrayList<HomeModel> data) {
+        public MyRecyclerViewAdapter(ArrayList<HomeModel> data) {
             this.data = data;
         }
 

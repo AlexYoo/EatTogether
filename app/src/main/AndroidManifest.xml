@@ -21,11 +21,7 @@
         <activity
             android:name=".Ui.MainActivity"
             android:label="@string/title_activity_main">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <!-- 맨 처음 회원가입 화면 -->
@@ -33,7 +29,13 @@
         <activity
             android:name=".Ui.ProfileActivity"
             android:label="@string/title_activity_profile"
-             />
+             >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".Ui.RegionActivity" />
         <activity android:name=".Ui.ScheduleActivity" />
         <activity android:name=".Ui.FoodTypeActivity" />

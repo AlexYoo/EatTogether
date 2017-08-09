@@ -13,12 +13,17 @@
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_marginTop="30dp"
         android:id="@+id/profileImage"
+        android:src="@drawable/default_image"
         android:layout_width="128dp"
         android:layout_height="117dp"
         android:layout_gravity="center"/>
 
     <EditText
         android:id="@+id/profileName"
+        android:layout_margin="10dp"
+        android:hint="이름을 입력하세요."
+        android:paddingLeft="10dp"
+        android:background="@drawable/rounded"
         android:layout_width="324dp"
         android:layout_height="46dp"
         android:layout_gravity="center"
@@ -26,8 +31,9 @@
         android:inputType="textPersonName" />
 
     <LinearLayout
-        android:layout_marginLeft="30dp"
-        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded"
+        android:layout_width="324dp"
         android:layout_height="50dp"
         android:orientation="horizontal"
         android:weightSum="1">
@@ -38,9 +44,11 @@
             android:layout_height="match_parent"
             android:layout_centerHorizontal="true"
             android:layout_weight="0.3"
+            android:paddingLeft="10dp"
             android:gravity="left|center_vertical"
             android:text="성별"
-            android:textSize="30dp" />
+            android:textColor="#8d97d5"
+            android:textSize="25dp" />
 
         <RadioGroup
             android:layout_weight="0.7"
@@ -71,28 +79,35 @@
 
     <!--생년월일 스크롤로 구현하기-->
     <Button
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded"
         android:layout_gravity="center"
         android:gravity="center|left"
         android:id="@+id/profileBirthday"
-        android:layout_width="300dp"
+        android:layout_width="324dp"
         android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
         android:text="생년월일"
-        android:textSize="30dp"
+        android:textSize="25dp"
+        android:textColor="#8d97d5"
         android:layout_below="@+id/profileSex" />
 
     <EditText
+        android:background="@drawable/rounded"
         android:id="@+id/profileIntroduction"
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
-        android:layout_width="match_parent"
+        android:layout_width="324dp"
+        android:layout_gravity="center"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_weight="0.31"
         android:ems="10"
         android:gravity="top|left"
         android:hint="자기소개"
         android:inputType="textMultiLine"
-        android:textSize="30dp" />
+        android:textSize="25dp"
+        android:textColor="#8d97d5"/>
 
 
 </LinearLayout>
