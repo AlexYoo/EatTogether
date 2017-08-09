@@ -2,14 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="100dp"
+    android:background="@drawable/rounded"
     android:orientation="horizontal"
     android:weightSum="100"
     android:layout_margin="10dp">
 
-    <ImageView
-        android:background="@color/black_overlay"
+    <de.hdodenhof.circleimageview.CircleImageView
         android:padding="1dp"
         android:id="@+id/thumbnail"
+        android:src="@drawable/default_image"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_weight="33" />

@@ -5,6 +5,10 @@
 
     tools:context="com.example.tacademy.eattogether.mainFragment.SettingsFragment">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:src="@drawable/settings_top"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,16 +18,31 @@
             android:id="@+id/settingsProfileImage"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:src="@drawable/default_image"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="50dp" />
+            android:layout_marginTop="100dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#f98578"
+            />
 
         <TextView
+            android:layout_marginTop="20dp"
             android:layout_width="80dp"
             android:layout_height="30dp"
             android:text="사용자 이름"
-            android:textSize="25dp"
+            android:textSize="20dp"
             android:gravity="center"
+            android:layout_marginBottom="20dp"
             android:layout_gravity="center_horizontal"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#f98578"
             />
 
         <Button
@@ -46,16 +65,7 @@
         android:layout_marginBottom="50dp"
         android:text="로그아웃" />
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="600dp"
-        android:background="@android:color/holo_green_dark"
-        android:gravity="left|center"
-        android:text="여기는 설정"
-        android:textSize="35dp" />
+
 
 
 

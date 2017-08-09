@@ -14,7 +14,6 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.tacademy.eattogether.Model.HomeModel;
@@ -31,6 +30,7 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import java.util.ArrayList;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -134,7 +134,7 @@ public class HomeFragment extends Fragment {
     private class ListItemViewHolder extends RecyclerView.ViewHolder{
 
         TextView viewName,viewFoodType,viewPeopleCnt,viewNotice;
-        ImageView image;
+        CircleImageView image;
 
         public ListItemViewHolder(View itemView) {
             super(itemView);
