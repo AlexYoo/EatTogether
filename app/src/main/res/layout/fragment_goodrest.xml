@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.tacademy.eattogether.mainFragment.GoodRestFragment">
+    tools:context=".good_restaurant.GoodRestFragment">
 
     <!--tools:listItem : 커스텀 셀 프리뷰-->
     <android.support.v7.widget.RecyclerView
@@ -23,9 +23,11 @@
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center|end"
+        android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        app:fabSize="normal"
+        app:backgroundTint="#DB8D0F"
+        app:srcCompat="@drawable/google_pin" />
 
     <include layout="@layout/content_test" />
 

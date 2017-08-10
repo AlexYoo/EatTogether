@@ -4,254 +4,159 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.tacademy.eattogether.Ui.FoodTypeActivity"
-    android:orientation="vertical">
+    tools:context=".home.FoodTypeActivity"
+    android:orientation="vertical"
+    android:weightSum="100">
 
     <LinearLayout
-        android:layout_marginTop="20dp"
+        android:layout_weight="15"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:text="choose food type"
-            android:gravity="center"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-            <Button
-                android:layout_marginLeft="60dp"
-                android:layout_marginRight="45dp"
-                android:layout_width="60dp"
-                android:layout_height="50dp" />
-
-            <Button
-                android:layout_width="60dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_marginRight="45dp"
-                />
-
-            <Button
-
-                android:layout_width="60dp"
-                android:layout_height="50dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-            <Button
-                android:layout_marginLeft="60dp"
-                android:layout_marginRight="45dp"
-                android:layout_width="60dp"
-                android:layout_height="50dp" />
-
-            <Button
-                android:layout_width="60dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_marginRight="45dp"
-                />
-
-            <Button
-
-                android:layout_width="60dp"
-                android:layout_height="50dp" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-            <Button
-                android:layout_marginLeft="60dp"
-                android:layout_marginRight="45dp"
-                android:layout_width="60dp"
-                android:layout_height="50dp" />
-
-            <Button
-                android:layout_width="60dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_marginRight="45dp"
-                />
-
-            <Button
-
-                android:layout_width="60dp"
-                android:layout_height="50dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-            <Button
-                android:layout_marginLeft="60dp"
-                android:layout_marginRight="45dp"
-                android:layout_width="60dp"
-                android:layout_height="50dp" />
-
-            <Button
-                android:layout_width="60dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_marginRight="45dp"
-                />
-
-            <Button
-
-                android:layout_width="60dp"
-                android:layout_height="50dp" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-            <Button
-                android:layout_marginLeft="60dp"
-                android:layout_marginRight="45dp"
-                android:layout_width="60dp"
-                android:layout_height="50dp" />
-
-            <Button
-                android:layout_width="60dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_marginRight="45dp"
-                />
-
-            <Button
-
-                android:layout_width="60dp"
-                android:layout_height="50dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-            <Button
-                android:layout_marginLeft="60dp"
-                android:layout_marginRight="45dp"
-                android:layout_width="60dp"
-                android:layout_height="50dp" />
-
-            <Button
-                android:layout_width="60dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_marginRight="45dp"
-                />
-
-            <Button
-
-                android:layout_width="60dp"
-                android:layout_height="50dp" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-            <Button
-                android:layout_marginLeft="60dp"
-                android:layout_marginRight="45dp"
-                android:layout_width="60dp"
-                android:layout_height="50dp" />
-
-            <Button
-                android:layout_width="60dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_marginRight="45dp"
-                />
-
-            <Button
-
-                android:layout_width="60dp"
-                android:layout_height="50dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-            <Button
-                android:layout_marginLeft="60dp"
-                android:layout_marginRight="45dp"
-                android:layout_width="60dp"
-                android:layout_height="50dp" />
-
-            <Button
-                android:layout_width="60dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_marginRight="45dp"
-                />
-
-            <Button
-
-                android:layout_width="60dp"
-                android:layout_height="50dp" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="80dp">
+        android:layout_height="0dp"
+        android:orientation="horizontal">
 
         <Button
-            android:text="store"
-            android:layout_width="250dp"
+            android:id="@+id/foodAll"
+            android:layout_width="75dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="70dp"
-            android:layout_gravity="center"/>
+            android:background="@drawable/rounded"
+            android:layout_marginLeft="50dp"
+            android:layout_gravity="left|center_vertical"
+            android:text="전체"/>
 
+        <Button
+            android:id="@+id/foodKorean"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded"
+            android:layout_marginLeft="37.5dp"
+            android:layout_gravity="center|center_vertical"
+            android:text="한식"/>
+
+        <Button
+            android:id="@+id/foodWest"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded"
+            android:layout_marginLeft="37.5dp"
+            android:layout_gravity="center|center_vertical"
+            android:text="양식"/>
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="15"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/foodChinese"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded"
+            android:layout_marginLeft="50dp"
+            android:layout_gravity="left|center_vertical"
+            android:text="중식"/>
+
+        <Button
+            android:id="@+id/foodJapanese"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded"
+            android:layout_marginLeft="37.5dp"
+            android:layout_gravity="center|center_vertical"
+            android:text="일식"/>
+
+        <Button
+            android:id="@+id/foodAlcohol"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded"
+            android:layout_marginLeft="37.5dp"
+            android:layout_gravity="center|center_vertical"
+            android:text="술"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="15"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/foodCafe"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded"
+            android:layout_marginLeft="50dp"
+            android:layout_gravity="left|center_vertical"
+            android:text="카페"/>
+
+        <Button
+            android:id="@+id/foodMeat"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded"
+            android:layout_marginLeft="37.5dp"
+            android:layout_gravity="center|center_vertical"
+            android:text="고기"/>
+
+        <Button
+            android:id="@+id/foodVegetable"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded"
+            android:layout_marginLeft="37.5dp"
+            android:layout_gravity="center|center_vertical"
+            android:text="채식"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="15"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/foodNoodle"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded"
+            android:layout_marginLeft="50dp"
+            android:layout_gravity="left|center_vertical"
+            android:text="면류"/>
+
+        <Button
+            android:id="@+id/foodFish"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded"
+            android:layout_marginLeft="37.5dp"
+            android:layout_gravity="center|center_vertical"
+            android:text="해산물"/>
+
+        <Button
+            android:id="@+id/foodBread"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded"
+            android:layout_marginLeft="37.5dp"
+            android:layout_gravity="center|center_vertical"
+            android:text="빵"/>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/rounded"
+        android:id="@+id/foodtypeSaveBtn"
+        android:text="저장"
+        android:textSize="25dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"/>
 
 
 

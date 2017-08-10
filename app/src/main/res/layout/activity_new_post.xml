@@ -8,7 +8,7 @@
     android:layout_marginTop="50dp"
     android:orientation="vertical"
     android:weightSum="1"
-    tools:context="com.example.tacademy.eattogether.Ui.NewPostActivity">
+    tools:context=".home.NewPostActivity">
 
     <Button
         android:id="@+id/selectRegion"
@@ -16,7 +16,8 @@
         android:layout_height="50dp"
         android:layout_marginBottom="20dp"
         android:gravity="left|fill_vertical"
-        android:text="여행 지역" />
+        android:text="여행 지역"
+        android:background="@drawable/rounded"/>
 
     <Button
         android:id="@+id/selectDate"
@@ -26,10 +27,12 @@
         android:gravity="left|fill_vertical"
         android:text="여행 일정"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="76dp" />
+        tools:layout_editor_absoluteY="76dp"
+        android:background="@drawable/rounded"/>
 
     <Button
         android:id="@+id/selectFood"
+        android:background="@drawable/rounded"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginBottom="20dp"
@@ -37,6 +40,7 @@
         android:text="음식 종류" />
 
     <LinearLayout
+        android:background="@drawable/rounded"
         android:id="@+id/peopleLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -51,9 +55,10 @@
 
         <Button
             android:id="@+id/minusButton"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginLeft="50dp"
+            android:background="@drawable/rounded"
             android:text="-"
             android:textSize="25dp" />
 
@@ -69,9 +74,11 @@
 
         <Button
             android:id="@+id/plusButton"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:text="+" />
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:textSize="20dp"
+            android:text="+"
+            android:background="@drawable/rounded"/>
 
 
     </LinearLayout>
@@ -79,8 +86,10 @@
 
     <EditText
         android:id="@+id/Comment"
+        android:background="@drawable/rounded"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="40dp"
         android:layout_weight="0.53"
         android:hint="하고 싶은 말"
@@ -88,6 +97,7 @@
 
     <Button
         android:id="@+id/tempSaveBtn"
+        android:background="@drawable/rounded"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginBottom="20dp"

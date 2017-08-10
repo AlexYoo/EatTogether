@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue_btn_bg_pressed_color"
-    tools:context="com.example.tacademy.eattogether.signUpFragment.SNSLoginFragment">
+    tools:context="com.example.tacademy.eattogether.sign_up.login.SNSLoginFragment">
 
 
     <RelativeLayout

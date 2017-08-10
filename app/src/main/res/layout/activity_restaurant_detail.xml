@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="100"
+    tools:context=".good_restaurant.RestaurantDetailActivity">
+
+    <ImageView
+        android:id="@+id/restaurantFoodThumbnail"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="25"
+        android:src="@drawable/food_default1"
+        android:scaleType="fitXY"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#B1BCBE"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="25"
+        android:orientation="vertical">
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="음식점이름(음식이름)"
+            android:textSize="25dp"
+            android:gravity="center"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="130dp"
+                android:text="평점"
+                android:textSize="25dp"
+                android:gravity="left"/>
+            <!--이 부분에서 평점 별점 넣기-->
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#B1BCBE"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:gravity="center_vertical"
+        android:text="가격 : "
+        android:layout_marginLeft="20dp"
+        android:textColor="#B1BCBE"
+        android:textStyle="bold"
+        android:textSize="23dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#B1BCBE"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:gravity="center_vertical"
+        android:text="운영시간 : "
+        android:layout_marginLeft="20dp"
+        android:textColor="#B1BCBE"
+        android:textStyle="bold"
+        android:textSize="23dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#B1BCBE"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:gravity="center_vertical"
+        android:text="주소 : "
+        android:layout_marginLeft="20dp"
+        android:textColor="#B1BCBE"
+        android:textStyle="bold"
+        android:textSize="23dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#B1BCBE"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:gravity="center_vertical"
+        android:text="전화번호 : "
+        android:layout_marginLeft="20dp"
+        android:textColor="#B1BCBE"
+        android:textStyle="bold"
+        android:textSize="23dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#B1BCBE"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:gravity="center_vertical"
+        android:text="음식분류 : "
+        android:layout_marginLeft="20dp"
+        android:textColor="#B1BCBE"
+        android:textStyle="bold"
+        android:textSize="23dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#B1BCBE"
+        />
+    
+    
+
+
+
+
+
+</LinearLayout>

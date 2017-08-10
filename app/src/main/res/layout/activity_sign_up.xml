@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.example.tacademy.eattogether.Ui.SignUpActivity"
+    tools:context="com.example.tacademy.eattogether.sign_up.tutorial.SignUpActivity"
     android:orientation="vertical"
     android:weightSum="100"
     >
@@ -39,7 +39,7 @@
         android:layout_height="0dp"
         android:layout_weight="40"
         android:id="@+id/snsLoginFragment"
-        android:name="com.example.tacademy.eattogether.signUpFragment.SNSLoginFragment"
+        android:name="com.example.tacademy.eattogether.sign_up.login.SNSLoginFragment"
 
         ></fragment>
 

@@ -7,28 +7,52 @@
     xmlns:tools="http://schemas.android.com/tools">
 <SlidingDrawer
     android:id="@+id/slidingDrawer"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="300dp"
     android:orientation="vertical"
     android:gravity="center_horizontal"
     android:handle="@+id/handle"
     android:content="@+id/content"
     android:rotation="180">
-        <LinearLayout android:id="@+id/handle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <ImageView android:id="@+id/imageView"
+        <LinearLayout
+            android:id="@+id/handle"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#EAF20C">
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/main_top_drawer"
-                android:rotation="180" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:weightSum="10"
+                android:background="@drawable/rounded_top_drawer_textview">
+                <ImageView
+                    android:layout_weight="1"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/magnifying_glass"
+                    android:rotation="180"
+                    android:layout_gravity="left|center"/>
+                <TextView
+                    android:layout_weight="9"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="50dp"
+                    android:paddingLeft="30dp"
+                    android:gravity="left|center"
+                    android:rotation="180"
+                    android:text="모든 지역, 모든 일정, 음식 종류"/>
+            </LinearLayout>
+
         </LinearLayout>
 
     <LinearLayout
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/error_stroke_color"
+        android:background="#E3EA0C"
         android:orientation="vertical"
         android:rotation="180">
 

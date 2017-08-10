@@ -10,8 +10,8 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.example.tacademy.eattogether.Maps.GeoPoint;
-import com.example.tacademy.eattogether.Maps.GeoTrans;
+import com.example.tacademy.eattogether.maps.GeoPoint;
+import com.example.tacademy.eattogether.maps.GeoTrans;
 import com.squareup.otto.Bus;
 
 import java.util.UUID;

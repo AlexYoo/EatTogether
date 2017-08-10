@@ -6,55 +6,77 @@
 
     <SlidingDrawer
         android:id="@+id/slidingDrawer"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="250dp"
         android:orientation="vertical"
         android:gravity="center_horizontal"
         android:handle="@+id/handle"
         android:content="@+id/content"
         android:rotation="180">
-        <LinearLayout android:id="@+id/handle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <ImageView android:id="@+id/imageView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/main_top_drawer"
-                android:rotation="180" />
-        </LinearLayout>
         <LinearLayout
+            android:id="@+id/handle"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#EAF20C">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:weightSum="10"
+                android:background="@drawable/rounded_top_drawer_textview">
+                <ImageView
+                    android:layout_weight="1"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/magnifying_glass"
+                    android:rotation="180"
+                    android:layout_gravity="left|center"/>
+                <TextView
+                    android:layout_weight="9"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="50dp"
+                    android:paddingLeft="30dp"
+                    android:gravity="left|center"
+                    android:rotation="180"
+                    android:text="모든 지역, 음식 종류"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#f98578"
+            android:background="#E3EA0C"
             android:orientation="vertical"
-            android:id="@+id/content"
             android:rotation="180">
-            <Button
-                android:layout_marginTop="30dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="10dp"
-                android:id="@+id/selectRegion"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@drawable/rounded_theme_color"
-                android:gravity="left|fill_vertical"
-                android:text="여행 지역" />
 
-            <Button
-                android:id="@+id/selectFood"
-                android:background="@drawable/rounded_theme_color"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginLeft="30dp"
-                android:gravity="left|fill_vertical"
-                android:text="음식 종류" />
+        <Button
+            android:id="@+id/goodrestSelectRegion"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/rounded_theme_color"
+            android:gravity="left|fill_vertical"
+            android:text="여행 지역" />
 
-
-
-
+        <Button
+            android:id="@+id/goodrestSelectFood"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/rounded_theme_color"
+            android:gravity="left|fill_vertical"
+            android:text="음식 종류" />
         </LinearLayout>
 
 
