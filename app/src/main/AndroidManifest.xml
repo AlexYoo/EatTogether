@@ -29,21 +29,18 @@
                 android:resource="@xml/rx_paparazzo_file_paths" />
         </provider>
 
-
-        <!--메인 화면-->
+        <!-- 메인 화면 -->
         <activity
             android:name=".ui.MainActivity"
-            android:label="@string/title_activity_main">
+            android:label="@string/title_activity_main" />
+
+        <!-- 맨 처음 회원가입 화면 -->
+        <activity android:name=".sign_up.tutorial.SignUpActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- 맨 처음 회원가입 화면 -->
-        <activity android:name=".sign_up.tutorial.SignUpActivity" >
-
         </activity>
 
         <!-- 프로필 화면 -->
@@ -55,20 +52,21 @@
         <activity android:name=".home.RegionActivity" />
 
         <!-- 일정 선택 화면 -->
-        <activity android:name=".sign_up.profile.ScheduleActivity"
-            android:theme="@style/Theme.AppCompat.Light.DialogWhenLarge"/>
+        <activity
+            android:name=".sign_up.profile.ScheduleActivity"
+            android:theme="@style/Theme.AppCompat.Light.DialogWhenLarge" />
 
         <!-- 음식 종류 선택 화면 -->
         <activity android:name=".home.FoodTypeActivity" />
 
         <!-- top drawer로 바꿀 임시 액티비티 -->
         <activity android:name=".home.NewPostActivity" />
-        <!--테스트 액티비티-->
+        <!-- 테스트 액티비티 -->
         <activity
             android:name=".util.testActivity"
             android:label="@string/title_activity_test"
             android:theme="@style/AppTheme.NoActionBar" />
-        <!--프로필 생년월일 선택 액티비티 -->
+        <!-- 프로필 생년월일 선택 액티비티 -->
         <activity
             android:name=".sign_up.profile.DatePickerActivity"
             android:theme="@style/Theme.AppCompat.Dialog" />
@@ -87,7 +85,9 @@
         <activity
             android:name=".maps.Maps2Activity"
             android:label="@string/title_activity_maps2" />
-        <activity android:name=".good_restaurant.RestaurantDetailActivity"></activity>
+        <activity android:name=".good_restaurant.RestaurantDetailActivity" />
+        <activity android:name=".chatting.ChattingJoinActivity" />
+        <activity android:name=".settings.MyFavoriteActivity"></activity>
     </application>
 
 </manifest>

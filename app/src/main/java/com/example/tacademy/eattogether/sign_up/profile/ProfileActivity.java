@@ -118,7 +118,7 @@ public class ProfileActivity extends AppCompatActivity {
         profileBirthday.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                S.getInstance().showPopup(ProfileActivity.this, "생년월일", "여기서 달력을 띄웁니다.", 2);
+//                S.getInstance().showPopup(ProfileActivity.this, "생년월일", "여기서 달력을 띄웁니다.", 2);
                 Intent intent = new Intent(getBaseContext(), DatePickerActivity.class);
                 startActivityForResult(intent, REQUEST_MY_ACTIVITY);
             }

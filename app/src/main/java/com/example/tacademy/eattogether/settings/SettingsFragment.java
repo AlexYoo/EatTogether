@@ -1,5 +1,6 @@
 package com.example.tacademy.eattogether.settings;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.tacademy.eattogether.R;
+import com.example.tacademy.eattogether.sign_up.tutorial.SignUpActivity;
 import com.example.tacademy.eattogether.util.S;
 import com.miguelbcr.ui.rx_paparazzo2.RxPaparazzo;
 import com.miguelbcr.ui.rx_paparazzo2.entities.FileData;
@@ -68,10 +70,45 @@ public class SettingsFragment extends Fragment {
             }
         });
 
+        jjim.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                S.getInstance().showPopup3(getContext(), "찜", "이 버튼을 누르면 찜 목록으로 넘어갑니다.",
+                        "다음화면", new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                sweetAlertDialog.dismissWithAnimation();
+                                startActivity(new Intent(getContext(), MyFavoriteActivity.class));
+                            }
+                        }, "끄기", new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                sweetAlertDialog.dismissWithAnimation();
+                            }
+                        });
+            }
+        });
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                S.getInstance().showPopup3(getContext(), "로그아웃", "이 버튼을 누르면 로그아웃합니다.",
+                        "다음화면", new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                sweetAlertDialog.dismissWithAnimation();
+                                startActivity(new Intent(getContext(), SignUpActivity.class));
+                            }
+                        }, "끄기", new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                sweetAlertDialog.dismissWithAnimation();
+                            }
+                        });
+            }
+        });
+
         return view;
-
-
-
     }
 
 

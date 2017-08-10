@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.tacademy.eattogether.R;
+import com.example.tacademy.eattogether.chatting.ChattingJoinActivity;
 import com.example.tacademy.eattogether.sign_up.profile.ScheduleActivity;
 import com.example.tacademy.eattogether.util.S;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -176,7 +177,19 @@ public class HomeFragment extends Fragment {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    S.getInstance().showPopup3(getContext(), "채팅", "이 버튼을 누르면 채팅방으로 이동.",
+                            "다음화면", new SweetAlertDialog.OnSweetClickListener() {
+                                @Override
+                                public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                    sweetAlertDialog.dismissWithAnimation();
+                                    startActivity(new Intent(getContext(), ChattingJoinActivity.class));
+                                }
+                            }, "끄기", new SweetAlertDialog.OnSweetClickListener() {
+                                @Override
+                                public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                    sweetAlertDialog.dismissWithAnimation();
+                                }
+                            });
                 }
             });
 
