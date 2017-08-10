@@ -10,6 +10,7 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.tacademy.eattogether.R;
@@ -46,9 +47,10 @@ public class HistoryFragment extends Fragment {
         recyclerView.setLayoutManager(linearLayoutManager);
         myHistoryRecyclerViewAdapter = new MyHistoryRecyclerViewAdapter(data);
         recyclerView.setAdapter(myHistoryRecyclerViewAdapter);
-        for(int i=0; i<2;i++) {
-            data.add(new HistoryModel());
-        }
+
+        data.add(new HistoryModel("부산", "한식", "3명", "안녕하세요. 같이 먹고 싶습니다.", "2017.8.8", R.drawable.food_default0));
+        data.add(new HistoryModel("부산", "일식", "4명", "안녕하세요. 같이 먹고 싶습니다.", "2017.8.9", R.drawable.food_default1));
+
 
 
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new ItemTouchHelperCallback(myHistoryRecyclerViewAdapter));
@@ -66,15 +68,16 @@ public class HistoryFragment extends Fragment {
     //뷰 홀더
     private class ListItemViewHolder extends RecyclerView.ViewHolder{
 
-        TextView name, foodType, peopleCnt, comment;
-
+        TextView name, foodType, peopleCnt, comment, date;
+        ImageView image;
         public ListItemViewHolder(View itemView) {
             super(itemView);
-
-            name = itemView.findViewById(R.id.historyName);
-            foodType = itemView.findViewById(R.id.historyFoodType);
-            peopleCnt = itemView.findViewById(R.id.historyPeopleCnt);
-            comment = itemView.findViewById(R.id.historyComment);
+            date = itemView.findViewById(R.id.historyDate);
+            image = itemView.findViewById(R.id.historyBackground);
+            name = itemView.findViewById(R.id.name);
+            foodType = itemView.findViewById(R.id.foodType);
+            peopleCnt = itemView.findViewById(R.id.peopleCnt);
+            comment = itemView.findViewById(R.id.comment);
         }
     }
 
@@ -102,10 +105,13 @@ public class HistoryFragment extends Fragment {
         public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
             HistoryModel historyModel = data.get(position);
             ListItemViewHolder item = (ListItemViewHolder) holder;
-            item.name.setText("이름 : " + historyModel.getName());
-            item.foodType.setText("음식 종류 : " + historyModel.getFoodType());
-            item.peopleCnt.setText("인원 : "+historyModel.getPeopleCnt());
-            item.comment.setText("하고 싶은 말 : " + historyModel.getComment());
+
+            item.date.setText("" + historyModel.getDate());
+            item.image.setImageResource(historyModel.getImage());
+            item.name.setText("" + historyModel.getName());
+            item.foodType.setText("" + historyModel.getFoodType());
+            item.peopleCnt.setText(""+historyModel.getPeopleCnt());
+            item.comment.setText("" + historyModel.getComment());
         }
 
         @Override

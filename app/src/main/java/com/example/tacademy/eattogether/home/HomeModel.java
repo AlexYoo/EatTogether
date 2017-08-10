@@ -1,6 +1,5 @@
 package com.example.tacademy.eattogether.home;
 
-import android.widget.ImageView;
 
 /**
  * Created by Tacademy on 2017-08-04.
@@ -11,14 +10,14 @@ public class HomeModel {
     public String viewFoodType;
     public String viewPeopleCnt;
     public String viewNotice;
-    public ImageView image;
+    public int image;
 
 
 
     public HomeModel() {
     }
 
-    public HomeModel(String viewName, String viewFoodType, String viewPeopleCnt, String viewNotice, ImageView image) {
+    public HomeModel(String viewName, String viewFoodType, String viewPeopleCnt, String viewNotice, int image) {
         this.viewName = viewName;
         this.viewFoodType = viewFoodType;
         this.viewPeopleCnt = viewPeopleCnt;
@@ -58,11 +57,11 @@ public class HomeModel {
         this.viewNotice = viewNotice;
     }
 
-    public ImageView getImage() {
+    public int getImage() {
         return image;
     }
 
-    public void setImage(ImageView image) {
+    public void setImage(int image) {
         this.image = image;
     }
 }

@@ -42,7 +42,9 @@
         </activity>
 
         <!-- 맨 처음 회원가입 화면 -->
-        <activity android:name=".sign_up.tutorial.SignUpActivity" ></activity>
+        <activity android:name=".sign_up.tutorial.SignUpActivity" >
+
+        </activity>
 
         <!-- 프로필 화면 -->
         <activity

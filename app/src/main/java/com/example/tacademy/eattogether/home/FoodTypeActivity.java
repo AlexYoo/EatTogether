@@ -225,7 +225,7 @@ public class FoodTypeActivity extends AppCompatActivity {
         foodtypeSaveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                S.getInstance().showPopup3(getBaseContext(), "저장", "음식 종류를 저장하시겠습니까?",
+                S.getInstance().showPopup3(FoodTypeActivity.this, "저장", "음식 종류를 저장하시겠습니까?",
                         "예", new SweetAlertDialog.OnSweetClickListener() {
                             @Override
                             public void onClick(SweetAlertDialog sweetAlertDialog) {

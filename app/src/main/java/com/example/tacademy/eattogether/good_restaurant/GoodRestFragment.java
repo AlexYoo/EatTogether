@@ -13,7 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.SlidingDrawer;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.tacademy.eattogether.R;
@@ -32,7 +32,7 @@ public class GoodRestFragment extends Fragment {
     ListAdapter listAdapter;
     ArrayList<GoodRestModel> data = new ArrayList<>();
     Button selectRegion, selectFood;
-    SlidingDrawer slidingDrawer;
+
     public GoodRestFragment() {
         // Required empty public constructor
     }
@@ -52,9 +52,10 @@ public class GoodRestFragment extends Fragment {
         recyclerView.setLayoutManager(linearLayoutManager);
         listAdapter = new ListAdapter(data);
         recyclerView.setAdapter(listAdapter);
-        for(int i=0; i<10;i++) {
-            data.add(new GoodRestModel());
-        }
+
+        data.add(new GoodRestModel("미소야", "돈까스", "일식", "￦8,900", "3.3", R.drawable.misoya));
+        data.add(new GoodRestModel("국밥집", "국밥", "한식", "￦7,900", "4.0", R.drawable.gookbab));
+        data.add(new GoodRestModel("물회집", "물회", "한식", "9,900", "3.5", R.drawable.moolhui));
 
 
 
@@ -101,10 +102,10 @@ public class GoodRestFragment extends Fragment {
     private class ListItemViewHolder extends RecyclerView.ViewHolder{
 
         TextView restaurantName,foodName,foodType,foodPrice, restaurantGrade;
-
+        ImageView foodImage;
         public ListItemViewHolder(View itemView) {
             super(itemView);
-
+            foodImage = itemView.findViewById(R.id.goodrestBackground);
             restaurantName = itemView.findViewById(R.id.restaurantName);
             foodName = itemView.findViewById(R.id.foodName);
             foodType = itemView.findViewById(R.id.foodType);
@@ -143,11 +144,13 @@ public class GoodRestFragment extends Fragment {
         public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
             GoodRestModel goodRestModel = data.get(position);
             ListItemViewHolder item = (ListItemViewHolder) holder;
-            item.restaurantName.setText("음식점 이름 : " + goodRestModel.getRestaurantName());
-            item.foodName.setText("음식 이름 : " + goodRestModel.getFoodName());
-            item.foodType.setText("음식 종류 : " + goodRestModel.getFoodType());
-            item.restaurantGrade.setText("평점 : "+goodRestModel.getRestaurantGrade());
-            item.foodPrice.setText("음식 가격 : " + goodRestModel.getFoodPrice());
+
+            item.foodImage.setImageResource(goodRestModel.getFoodImage());
+            item.restaurantName.setText("" + goodRestModel.getRestaurantName());
+            item.foodName.setText("" + goodRestModel.getFoodName());
+            item.foodType.setText("" + goodRestModel.getFoodType());
+            item.restaurantGrade.setText("☆"+goodRestModel.getRestaurantGrade());
+            item.foodPrice.setText("" + goodRestModel.getFoodPrice());
         }
 
         @Override

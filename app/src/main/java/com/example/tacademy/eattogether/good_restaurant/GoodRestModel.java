@@ -9,18 +9,28 @@ public class GoodRestModel {
     String foodName;
     String foodType;
     String foodPrice;
-    double restaurantGrade;
+    String restaurantGrade;
+    int foodImage;
 
 
     public GoodRestModel() {
     }
 
-    public GoodRestModel(String restaurantName, String foodName, String foodType, String foodPrice, double restaurantGrade ) {
+    public GoodRestModel(String restaurantName, String foodName, String foodType, String foodPrice, String restaurantGrade, int foodImage) {
         this.restaurantName = restaurantName;
         this.foodName = foodName;
         this.foodType = foodType;
         this.foodPrice = foodPrice;
         this.restaurantGrade = restaurantGrade;
+        this.foodImage = foodImage;
+    }
+
+    public int getFoodImage() {
+        return foodImage;
+    }
+
+    public void setFoodImage(int foodImage) {
+        this.foodImage = foodImage;
     }
 
     public String getRestaurantName() {
@@ -55,11 +65,11 @@ public class GoodRestModel {
         this.foodPrice = foodPrice;
     }
 
-    public double getRestaurantGrade() {
+    public String getRestaurantGrade() {
         return restaurantGrade;
     }
 
-    public void setRestaurantGrade(double restaurantGrade) {
+    public void setRestaurantGrade(String restaurantGrade) {
         this.restaurantGrade = restaurantGrade;
     }
 

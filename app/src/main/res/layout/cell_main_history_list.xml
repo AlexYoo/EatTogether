@@ -1,51 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
-    android:orientation="horizontal"
-    android:weightSum="100"
+    android:layout_height="160dp"
+    android:layout_margin="10dp"
     android:background="@drawable/rounded"
-    android:layout_margin="10dp">
+    android:orientation="vertical"
+    android:weightSum="100">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:padding="1dp"
-        android:id="@+id/thumbnail"
-        android:src="@drawable/default_food_image"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_weight="33" />
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_weight="67"
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
+
+        <ImageView
+            android:id="@+id/historyBackground"
             android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:id="@+id/historyName"
-            android:gravity="left|fill_vertical"/>
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"/>
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:id="@+id/historyFoodType"
-            android:gravity="left|fill_vertical"/>
+            android:layout_height="match_parent"
+            android:background="#66000000">
+            <TextView
+                android:id="@+id/historyDate"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:text="1980.1.1"
+                android:layout_gravity="start"
+                android:textColor="#FFFFFF"
+                android:textSize="15dp"
+                android:textStyle="bold"/>
 
-        <TextView
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:id="@+id/historyPeopleCnt"
-            android:gravity="left|fill_vertical"/>
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:weightSum="11">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:id="@+id/historyComment"
-            android:gravity="left|fill_vertical"/>
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textSize="30dp"
+                android:textStyle="bold"/>
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="/"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/foodType"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:textStyle="bold"
+                android:textSize="30dp"
+                android:gravity="center"
+                android:textColor="#FFFFFF"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="/"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/peopleCnt"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:textSize="30dp"
+                android:gravity="center"
+                android:textColor="#FFFFFF"/>
+        </LinearLayout>
 
 
-</LinearLayout>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/comment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="default message"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"/>
+
+
+</android.support.v7.widget.CardView>

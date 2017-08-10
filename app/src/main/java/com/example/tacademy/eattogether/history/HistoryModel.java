@@ -9,15 +9,35 @@ public class HistoryModel {
     public String foodType;
     public String peopleCnt;
     public String comment;
+    public String date;
+    public int image;
 
     public HistoryModel() {
     }
 
-    public HistoryModel(String name, String foodType, String peopleCnt, String comment) {
+    public HistoryModel(String name, String foodType, String peopleCnt, String comment, String date, int image) {
         this.name = name;
         this.foodType = foodType;
         this.peopleCnt = peopleCnt;
         this.comment = comment;
+        this.date = date;
+        this.image = image;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
     }
 
     public String getName() {

@@ -1,66 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="130dp"
+    android:layout_margin="10dp"
     android:background="@drawable/rounded"
-    android:orientation="horizontal"
-    android:weightSum="100"
-    android:layout_margin="10dp">
+    android:orientation="vertical"
+    android:weightSum="100">
 
     <FrameLayout
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_weight="33">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/homeThumbnail"
+        <ImageView
+            android:id="@+id/cardViewBackground"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:padding="1dp"
-            android:src="@drawable/default_food_image" />
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#66000000"></LinearLayout>
 
-        <ImageButton
-            android:id="@+id/jjimButton"
-            android:background="#00ff0000"
-            android:layout_width="50dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_gravity="start"
-            app:srcCompat="@drawable/error_circle" />
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:weightSum="11">
+
+            <TextView
+                android:id="@+id/viewName"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textSize="30dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="/"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/viewFoodType"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:textStyle="bold"
+                android:textSize="30dp"
+                android:gravity="center"
+                android:textColor="#FFFFFF"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="/"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/viewPeopleCnt"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:textSize="30dp"
+                android:gravity="center"
+                android:textColor="#FFFFFF"/>
+        </LinearLayout>
+
 
     </FrameLayout>
 
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_weight="67"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:id="@+id/viewName"
-            android:gravity="left|fill_vertical"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:id="@+id/viewFoodType"
-            android:gravity="left|fill_vertical"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:id="@+id/viewPeopleCnt"
-            android:gravity="left|fill_vertical"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:id="@+id/viewNotice"
-            android:gravity="left|fill_vertical"/>
-
-    </LinearLayout>
+    <TextView
+        android:id="@+id/viewNotice"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="default message"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"/>
 
 
-</LinearLayout>
+</android.support.v7.widget.CardView>
