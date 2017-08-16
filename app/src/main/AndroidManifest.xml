@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.tacademy.eattogether">
+    package="com.manuel.tacademy.eattogether">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -32,16 +32,11 @@
         <!-- 메인 화면 -->
         <activity
             android:name=".ui.MainActivity"
-            android:label="@string/title_activity_main" />
+            android:label="@string/title_activity_main">
+        </activity>
 
         <!-- 맨 처음 회원가입 화면 -->
-        <activity android:name=".sign_up.tutorial.SignUpActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".sign_up.tutorial.SignUpActivity" />
 
         <!-- 프로필 화면 -->
         <activity
@@ -86,8 +81,19 @@
             android:name=".maps.Maps2Activity"
             android:label="@string/title_activity_maps2" />
         <activity android:name=".good_restaurant.RestaurantDetailActivity" />
-        <activity android:name=".chatting.ChattingJoinActivity" />
-        <activity android:name=".settings.MyFavoriteActivity"></activity>
+        <activity android:name=".chatting.ChattingJoinActivity"></activity>
+        <activity
+            android:name=".ui.TabActivity"
+            android:label="@string/title_activity_tab"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".maps.MainMapActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
     </application>
 
 </manifest>

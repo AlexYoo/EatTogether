@@ -8,7 +8,7 @@
     android:layout_marginTop="50dp"
     android:orientation="vertical"
     android:weightSum="1"
-    tools:context=".home.NewPostActivity">
+    tools:context="com.manuel.tacademy.eattogether.home.NewPostActivity">
 
     <Button
         android:id="@+id/selectRegion"

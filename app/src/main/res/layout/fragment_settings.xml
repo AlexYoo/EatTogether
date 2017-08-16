@@ -1,9 +1,9 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-    tools:context=".settings.SettingsFragment">
+    android:orientation="vertical"
+    tools:context="com.manuel.tacademy.eattogether.settings.SettingsFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,77 +14,78 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="My History"
+            android:text="Settings"
             android:textSize="25dp"/>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/settingsProfileImage"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/default_image"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="100dp" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="#f98578"
-            />
-
-        <TextView
-            android:layout_marginTop="20dp"
-            android:layout_width="120dp"
-            android:layout_height="30dp"
-            android:text="사용자 이름"
-            android:textSize="20dp"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
             android:gravity="center"
-            android:layout_marginBottom="20dp"
-            android:layout_gravity="center_horizontal"
-            />
+            android:layout_height="match_parent">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/settingsProfileImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/default_image"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.5"
+            android:orientation="vertical">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="#f98578"
-            />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:paddingLeft="10dp"
+                android:text="Default Name"
+                android:textSize="25dp"
+                android:gravity="center|left"/>
 
-        <ImageView
-            android:id="@+id/myFavoriteBtn"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/jjim"/>
-        <TextView
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:textSize="38dp"
-            android:text="찜"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:paddingLeft="10dp"
+                android:textSize="20dp"
+                android:text="클릭하여 프로필 수정하기"
+                android:gravity="center|left"/>
 
+        </LinearLayout>
 
     </LinearLayout>
 
-
-    <Button
-        android:id="@+id/logoutBtn"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_gravity="bottom|end"
-        android:layout_marginBottom="50dp"
-        android:background="@drawable/rounded"
-        android:text="로그아웃" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/black_overlay"/>
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6">
+        <!--위에 TAB 넣기 -->
+        <android.support.v4.view.ViewPager
+            android:id="@+id/favoriteContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v4.view.ViewPager>
+    </LinearLayout>
 
 
 
-</FrameLayout>
+
+
+
+
+
+</LinearLayout>

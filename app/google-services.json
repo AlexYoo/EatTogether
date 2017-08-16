@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:1051635488396:android:dd97f70e24094dcb",
         "android_client_info": {
-          "package_name": "com.example.tacademy.fbtest3"
+          "package_name": "com.manuel.tacademy.fbtest3"
         }
       },
       "oauth_client": [
@@ -41,7 +41,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:1051635488396:android:aeaa245dcb8203e9",
         "android_client_info": {
-          "package_name": "com.example.tacademy.fbtest2"
+          "package_name": "com.manuel.tacademy.fbtest2"
         }
       },
       "oauth_client": [
@@ -72,7 +72,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:1051635488396:android:215d01cb2dc82a57",
         "android_client_info": {
-          "package_name": "com.example.tacademy.facebooktest"
+          "package_name": "com.manuel.tacademy.facebooktest"
         }
       },
       "oauth_client": [
@@ -103,7 +103,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:1051635488396:android:d268e55d06a1baae",
         "android_client_info": {
-          "package_name": "com.example.tacademy.eattogether"
+          "package_name": "com.manuel.tacademy.eattogether"
         }
       },
       "oauth_client": [

@@ -1,17 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/chattingJoinLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.tacademy.eattogether.chatting.ChattingJoinActivity">
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context="com.manuel.tacademy.eattogether.com.manuel.tacademy.eattogether.chatting.ChattingJoinActivity">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="채팅방"
-        android:textColor="#dadada"
-        android:textSize="25dp"
-        android:gravity="center"/>
+        android:layout_height="0dp"
+        android:layout_weight="9">
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
 
-</android.support.constraint.ConstraintLayout>
+
+            ></android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:weightSum="10"
+        android:id="@+id/chattingPlusBtn">
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:text="+"
+            android:textSize="20dp"
+            />
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:id="@+id/chattingContent"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:text="send"
+            android:id="@+id/chattingSendBtn"/>
+    </LinearLayout>
+    
+
+</LinearLayout>
