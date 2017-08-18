@@ -14,11 +14,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.manuel.tacademy.eattogether.R;
-import com.manuel.tacademy.eattogether.sign_up.profile.ScheduleActivity;
 
 public class NewPostActivity extends AppCompatActivity {
     Button selectRegion, selectDate, selectFood, minusButton, plusButton; //지역, 날짜, 음식 선택
     TextView numOfPeople; //사람 수
+    Button newPostSaveButton;
     int peopleCnt;
     LinearLayout peopleLayout;
 
@@ -33,7 +33,9 @@ public class NewPostActivity extends AppCompatActivity {
         selectFood   = (Button) findViewById(R.id.selectFood);
         minusButton  = (Button) findViewById(R.id.minusButton);
         plusButton   = (Button) findViewById(R.id.plusButton);
+        newPostSaveButton = (Button) findViewById(R.id.newPostSaveBtn);
         numOfPeople  = (TextView) findViewById(R.id.NumOfPeople);
+
 
         selectRegion.setOnClickListener(new View.OnClickListener() {
             @Override
